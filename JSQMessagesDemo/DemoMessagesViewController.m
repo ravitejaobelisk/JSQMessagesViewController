@@ -68,6 +68,8 @@
                                                                               style:UIBarButtonItemStyleBordered
                                                                              target:self
                                                                              action:@selector(receiveMessagePressed:)];
+    
+    self.collectionView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
 
     /**
      *  Register custom menu actions for cells.
@@ -383,6 +385,8 @@
     }
     
     return self.demoData.incomingBubbleImageData;
+    
+    return nil;
 }
 
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -499,7 +503,7 @@
     
     JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
     
-    if (!msg.isMediaMessage && ![msg isKindOfClass:[JSQAttributedMessage class]]) {
+    if (!msg.isMediaMessage) {
         
         if ([msg.senderId isEqualToString:self.senderId]) {
             cell.textView.textColor = [UIColor blackColor];

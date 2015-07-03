@@ -98,61 +98,158 @@
      *
      *  You should have a mutable array or orderedSet, or something.
      */
-    self.messages = [[NSMutableArray alloc] initWithObjects:
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate distantPast]
-                                                     text:@"Welcome to JSQMessages: A messaging UI framework for iOS."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameWoz
-                                                     date:[NSDate distantPast]
-                                                     text:@"It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate distantPast]
-                                                     text:@"It even has data detectors. You can call me tonight. My cell number is 123-456-7890. My website is www.hexedbits.com."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameJobs
-                                                     date:[NSDate date]
-                                                     text:@"JSQMessagesViewController is nearly an exact replica of the iOS Messages App. And perhaps, better."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameCook
-                                                     date:[NSDate date]
-                                                     text:@"It is unit-tested, free, open-source, and documented."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate date]
-                                                     text:@"Now with media messages!"],
-                     nil];
+//    self.messages = [[NSMutableArray alloc] initWithObjects:
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"Welcome to JSQMessages: A messaging UI framework for iOS."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameWoz
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"It even has data detectors. You can call me tonight. My cell number is 123-456-7890. My website is www.hexedbits.com."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameJobs
+//                                                     date:[NSDate date]
+//                                                     text:@"JSQMessagesViewController is nearly an exact replica of the iOS Messages App. And perhaps, better."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameCook
+//                                                     date:[NSDate date]
+//                                                     text:@"It is unit-tested, free, open-source, and documented."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate date]
+//                                                     text:@"Now with media messages!"],
+//                     nil];
     
     
     /**
      Testing: Attributed Strings
      */
-    NSMutableAttributedString* attributedString = [NSMutableAttributedString new];
+    NSMutableAttributedString* attributedStringCremer = [NSMutableAttributedString new];
     
-    [attributedString appendAttributedString:[[NSAttributedString alloc]
-                                              initWithString:@"Good News!"
-                                              attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:18],
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.paragraphSpacingBefore = 10;
+    
+    [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
+                                              initWithString:@"Clareador Whiteness Perfect - FGM"
+                                              attributes:@{NSParagraphStyleAttributeName:style,
+                                                           NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline],
                                                            NSForegroundColorAttributeName:[UIColor whiteColor]}]];
     
-    [attributedString appendAttributedString:[[NSAttributedString alloc]
-                                              initWithString:@"\nNow with attributed strings"
-                                              attributes:@{NSFontAttributeName:[UIFont italicSystemFontOfSize:14],
-                                                           NSForegroundColorAttributeName:[UIColor redColor]}]];
-    
-    [self.messages addObject:[[JSQAttributedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
-                                                         senderDisplayName:kJSQDemoAvatarDisplayNameCook
-                                                                      date:[NSDate date]
-                                                            attributedText:attributedString]];
 
     
-    [self addPhotoMediaMessage];
+    [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
+                                              initWithString:@"\nPeróxido de Carbamida à 16%. Kit com 5 seringas + acessórios. Grátis 2 seringas de Condac 37%."
+                                              attributes:@{NSParagraphStyleAttributeName:style,
+                                                           NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline],
+                                                           NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
+                                              initWithString:@"\nR$71,89"
+                                              attributes:@{NSParagraphStyleAttributeName:style,
+                                                           NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1],
+                                                           NSForegroundColorAttributeName:[UIColor grayColor],
+                                                           NSStrikethroughStyleAttributeName:@1}]];
+    
+    [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
+                                              initWithString:@"\nR$67,90"
+                                              attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+                                                           NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    
+    NSMutableAttributedString* attributedStringPneu = [NSMutableAttributedString new];
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"Cinturato P7 - LONGA VIAGEM DE EMOÇÃO"
+                                                    attributes:@{NSParagraphStyleAttributeName:style,
+                                                                 NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline],
+                                                                 NSForegroundColorAttributeName:[UIColor whiteColor]}]];
+    
+    
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"\nO pneu de alta performance para carros de média e alta potência. A combinação perfeita para baixa resistênc..."
+                                                    attributes:@{NSParagraphStyleAttributeName:style,
+                                                                 NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline],
+                                                                 NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"\nR$299,89"
+                                                    attributes:@{NSParagraphStyleAttributeName:style,
+                                                                 NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1],
+                                                                 NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                 NSStrikethroughStyleAttributeName:@1}]];
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"\nR$250,90"
+                                                    attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+                                                                 NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    
+    HXExtendedMessage* attributedMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                    senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                 date:[NSDate date]
+                                                                                 text:attributedStringCremer.string];
+    
+    attributedMessage.attributedText = attributedStringPneu;
+    [self.messages addObject:attributedMessage];
+    
+    
+    
+    HXExtendedMessage* imageHeaderMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                      senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                   date:[NSDate date]
+                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage.attributedText = attributedStringCremer;
+    imageHeaderMessage.image = [UIImage imageNamed:@"cremeDentalQuadrado"];
+    //[self.messages addObject:imageHeaderMessage];
+    self.messages = [@[imageHeaderMessage]mutableCopy];
+    
+    
+    
+    HXExtendedMessage* pneuHeaderMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    pneuHeaderMessage.attributedText = attributedStringPneu;
+    pneuHeaderMessage.image = [UIImage imageNamed:@"pneu"];
+    //[self.messages addObject:imageHeaderMessage];
+    [self.messages addObject:pneuHeaderMessage];
+    
+    
+    
+    HXExtendedMessage* buttonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextSingleButton];
+    buttonMessage.attributedText = attributedStringCremer;
+    buttonMessage.titleForButton = @"Click Me";
+    [self.messages addObject:buttonMessage];
+    
+    HXExtendedMessage* dualButtonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                             date:[NSDate date]
+                                                                             type:HXExtendedDataMessageTypeAttributedTextDualButton];
+    dualButtonMessage.attributedText = attributedStringCremer;
+    dualButtonMessage.titleForLeftButton = @"Left Title";
+    dualButtonMessage.titleForRightButton = @"Right Title";
+    
+    [self.messages addObject:dualButtonMessage];
+    
+    
+    
+    //[self addPhotoMediaMessage];
     
     /**
      *  Setting to load extra messages for testing/demo

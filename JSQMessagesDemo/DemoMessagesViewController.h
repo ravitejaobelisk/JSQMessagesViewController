@@ -19,6 +19,7 @@
 
 // Import all the things
 #import "JSQMessages.h"
+#import "HXAdditions.h"
 
 #import "DemoModelData.h"
 #import "NSUserDefaults+DemoSettings.h"
@@ -34,8 +35,7 @@
 
 
 
-
-@interface DemoMessagesViewController : JSQMessagesViewController <UIActionSheetDelegate>
+@interface DemoMessagesViewController : HXMessagesViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) id<JSQDemoViewControllerDelegate> delegateModal;
 

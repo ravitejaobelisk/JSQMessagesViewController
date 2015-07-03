@@ -22,6 +22,8 @@
 
 #import "JSQMessages.h"
 
+#import "HXAdditions.h"
+
 /**
  *  This is for demo/testing purposes only. 
  *  This object sets up some fake model data.

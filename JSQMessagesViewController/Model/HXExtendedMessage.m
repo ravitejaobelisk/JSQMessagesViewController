@@ -16,21 +16,22 @@
 //  Released under an MIT license: http://opensource.org/licenses/MIT
 //
 
-#import "JSQAttributedMessage.h"
+#import "HXExtendedMessage.h"
 
-@implementation JSQAttributedMessage
+@implementation HXExtendedMessage
 
 
 #pragma mark - Initialization
 
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
-                      attributedText:(NSAttributedString *) attributedText {
+                               type:(HXExtendedDataMessageType) messageType {
     
     return [[self alloc] initWithSenderId:senderId
-                              senderDisplayName:displayName
-                                           date:[NSDate date]
-                            attributedText:attributedText];
+                        senderDisplayName:displayName
+                                     date:[NSDate date]
+                                     type:messageType];
+                        
     
 }
 
@@ -38,18 +39,23 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
-                   attributedText:(NSAttributedString *) attributedText  {
+                          type:(HXExtendedDataMessageType) messageType {
     
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
     NSParameterAssert(date != nil);
     
-    self = [super initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:attributedText.string];
+    self = [super initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:@""];
     if (self) {
-        _attributedText = [attributedText copy];
+        _messageType = messageType;
     }
     return self;
 }
 
+
+- (NSUInteger)hash {
+    NSUInteger contentHash = self.text.hash ^ self.image.hash ^ self.titleForButton.hash ^ self.titleForLeftButton.hash ^ self.titleForRightButton.hash;
+    return self.senderId.hash ^ self.date.hash ^ contentHash;
+}
 
 @end

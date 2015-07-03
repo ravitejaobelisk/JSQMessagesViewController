@@ -166,6 +166,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.avatarImageView.image = nil;
     self.avatarImageView.highlightedImage = nil;
+    
+     NSLog(@"prepareForReuse: %@", NSStringFromCGRect(self.messageBubbleContainerView.frame));
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
@@ -207,6 +209,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
         self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
     }
+    
+    NSLog(@"applyLayoutAttributes: %@", NSStringFromCGRect(self.messageBubbleContainerView.frame));
 }
 
 - (void)setHighlighted:(BOOL)highlighted

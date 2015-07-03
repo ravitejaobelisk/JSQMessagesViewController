@@ -18,16 +18,26 @@
 
 #import "JSQMessage.h"
 
-#import "JSQMessageAttributedData.h"
+#import "HXExtendedData.h"
 
-@interface JSQAttributedMessage : JSQMessage <JSQMessageAttributedData>
+@interface HXExtendedMessage : JSQMessage <HXExtendedData>
 
 
 /**
  *  Returns the body text of the message, or `nil` if the message is a media message.
  *  That is, if `isMediaMessage` is equal to `YES` then this value will be `nil`.
  */
-@property (copy, nonatomic, readonly) NSAttributedString *attributedText;
+@property (copy, nonatomic) NSAttributedString *attributedText;
+
+@property (copy, nonatomic) UIImage *image;
+
+@property (copy, nonatomic) NSString *titleForButton;
+
+@property (copy, nonatomic) NSString *titleForLeftButton;
+
+@property (copy, nonatomic) NSString *titleForRightButton;
+
+@property (assign, readonly) HXExtendedDataMessageType messageType;
 
 
 #pragma mark - Initialization
@@ -45,7 +55,7 @@
  */
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
-                      attributedText:(NSAttributedString *) attributedText;
+                              type:(HXExtendedDataMessageType) messageType;
 
 
 /**
@@ -63,7 +73,7 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
-                            attributedText:(NSAttributedString *) attributeText;
+                           type:(HXExtendedDataMessageType) messageType;
 
 
 
