@@ -107,7 +107,6 @@
     
     if (self.representedElementCategory == UICollectionElementCategoryCell) {
         JSQMessagesCollectionViewLayoutAttributes *layoutAttributes = (JSQMessagesCollectionViewLayoutAttributes *)object;
-        
         if (![layoutAttributes.messageBubbleFont isEqual:self.messageBubbleFont]
             || !UIEdgeInsetsEqualToEdgeInsets(layoutAttributes.textViewFrameInsets, self.textViewFrameInsets)
             || !UIEdgeInsetsEqualToEdgeInsets(layoutAttributes.textViewTextContainerInsets, self.textViewTextContainerInsets)

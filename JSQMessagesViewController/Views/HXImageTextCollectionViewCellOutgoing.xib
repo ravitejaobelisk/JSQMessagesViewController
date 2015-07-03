@@ -41,7 +41,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2qm-c6-OZf" userLabel="Bubble Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="203"/>
                             </imageView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaM-6Z-Qdb" userLabel="Header Image Container View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaM-6Z-Qdb" userLabel="Header Image Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="238" height="170"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wle-DU-T9Q" userLabel="Header Image">
@@ -52,12 +52,20 @@
                                             <constraint firstAttribute="height" constant="150" id="CTQ-v9-dMq"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqX-ol-duI" userLabel="Tapa Buraco da Porra do Mask">
+                                        <rect key="frame" x="0.0" y="157" width="238" height="13"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uqX-ol-duI" secondAttribute="bottom" id="0q6-my-iNi"/>
+                                    <constraint firstItem="uqX-ol-duI" firstAttribute="top" secondItem="Wle-DU-T9Q" secondAttribute="bottom" constant="-3" id="3Yu-07-mrf"/>
                                     <constraint firstItem="Wle-DU-T9Q" firstAttribute="top" secondItem="aaM-6Z-Qdb" secondAttribute="top" constant="10" id="6HY-bQ-S5r"/>
+                                    <constraint firstAttribute="trailing" secondItem="uqX-ol-duI" secondAttribute="trailing" id="Kpn-qc-MrL"/>
                                     <constraint firstAttribute="centerX" secondItem="Wle-DU-T9Q" secondAttribute="centerX" id="O7A-GF-Cds"/>
                                     <constraint firstAttribute="bottom" secondItem="Wle-DU-T9Q" secondAttribute="bottom" constant="10" id="X6d-1z-Vp2"/>
+                                    <constraint firstItem="uqX-ol-duI" firstAttribute="leading" secondItem="aaM-6Z-Qdb" secondAttribute="leading" id="rWr-iM-y0y"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-aM-0Dr" customClass="JSQMessagesCellTextView">

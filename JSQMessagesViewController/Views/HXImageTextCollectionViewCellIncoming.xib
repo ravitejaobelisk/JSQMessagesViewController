@@ -3,15 +3,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="4lh-CK-yVn" customClass="HXImageTextCollectionViewCellIncoming">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="215"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="215"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="272"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell top label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afj-rd-iNv" userLabel="Cell top label" customClass="JSQMessagesLabel">
@@ -35,29 +36,39 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btS-p8-B7Z" userLabel="Bubble container">
-                        <rect key="frame" x="36" y="40" width="244" height="155"/>
+                        <rect key="frame" x="36" y="40" width="244" height="212"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCS-Fu-acq" userLabel="Bubble Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="244" height="155"/>
+                                <rect key="frame" x="0.0" y="0.0" width="244" height="212"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eou-Fk-Cfk" userLabel="Header Image Container View">
-                                <rect key="frame" x="6" y="0.0" width="238" height="100"/>
+                                <rect key="frame" x="6" y="0.0" width="238" height="170"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nv4-qe-4f2" userLabel="Header View">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="100"/>
+                                        <rect key="frame" x="44" y="10" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="hnx-qt-AG4"/>
+                                            <constraint firstAttribute="width" secondItem="nv4-qe-4f2" secondAttribute="height" multiplier="1:1" id="oav-oc-gla"/>
+                                        </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5l-Iv-M7R" userLabel="Tapa Buraco da Porra do Mask">
+                                        <rect key="frame" x="0.0" y="157" width="238" height="13"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nv4-qe-4f2" secondAttribute="trailing" id="6Pb-eE-0l7"/>
-                                    <constraint firstAttribute="height" constant="100" id="TNV-JF-Zx2"/>
-                                    <constraint firstAttribute="bottom" secondItem="nv4-qe-4f2" secondAttribute="bottom" id="TPw-n2-jYa"/>
-                                    <constraint firstItem="nv4-qe-4f2" firstAttribute="leading" secondItem="eou-Fk-Cfk" secondAttribute="leading" id="wAc-pY-MP4"/>
-                                    <constraint firstItem="nv4-qe-4f2" firstAttribute="top" secondItem="eou-Fk-Cfk" secondAttribute="top" id="y21-6d-E9u"/>
+                                    <constraint firstItem="H5l-Iv-M7R" firstAttribute="top" secondItem="nv4-qe-4f2" secondAttribute="bottom" constant="-3" id="0YZ-oV-3nJ"/>
+                                    <constraint firstItem="H5l-Iv-M7R" firstAttribute="leading" secondItem="eou-Fk-Cfk" secondAttribute="leading" id="2zc-eD-2WO"/>
+                                    <constraint firstAttribute="bottom" secondItem="H5l-Iv-M7R" secondAttribute="bottom" id="GwU-zh-QbD"/>
+                                    <constraint firstAttribute="centerX" secondItem="nv4-qe-4f2" secondAttribute="centerX" id="JrI-8n-c7Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="nv4-qe-4f2" secondAttribute="bottom" constant="10" id="TPw-n2-jYa"/>
+                                    <constraint firstAttribute="trailing" secondItem="H5l-Iv-M7R" secondAttribute="trailing" id="whu-T1-ybk"/>
+                                    <constraint firstItem="nv4-qe-4f2" firstAttribute="top" secondItem="eou-Fk-Cfk" secondAttribute="top" constant="10" id="y21-6d-E9u"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-B8-cUW" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="6" y="100" width="238" height="55"/>
+                                <rect key="frame" x="6" y="170" width="238" height="42"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -66,6 +77,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KYU-B8-cUW" firstAttribute="top" secondItem="eou-Fk-Cfk" secondAttribute="bottom" id="21n-XT-r8C"/>
+                            <constraint firstItem="KYU-B8-cUW" firstAttribute="trailing" secondItem="eou-Fk-Cfk" secondAttribute="trailing" id="4Sc-dK-dSe"/>
                             <constraint firstAttribute="trailing" secondItem="KYU-B8-cUW" secondAttribute="trailing" id="4qS-03-PFO"/>
                             <constraint firstAttribute="bottom" secondItem="KYU-B8-cUW" secondAttribute="bottom" id="B2v-Gq-Y1L"/>
                             <constraint firstAttribute="trailing" secondItem="OCS-Fu-acq" secondAttribute="trailing" id="TdB-8V-aUc"/>
@@ -73,6 +85,7 @@
                             <constraint firstAttribute="bottom" secondItem="OCS-Fu-acq" secondAttribute="bottom" id="aJ4-ZD-tk9"/>
                             <constraint firstItem="eou-Fk-Cfk" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="atg-yE-uRE"/>
                             <constraint firstAttribute="trailing" secondItem="eou-Fk-Cfk" secondAttribute="trailing" id="c5M-Lh-YN8"/>
+                            <constraint firstItem="KYU-B8-cUW" firstAttribute="leading" secondItem="eou-Fk-Cfk" secondAttribute="leading" id="mXM-gd-UkH"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" id="qpQ-dc-2V5"/>
                             <constraint firstAttribute="width" constant="244" id="stE-iz-VHo"/>
                             <constraint firstItem="eou-Fk-Cfk" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="6" id="ygn-t3-a91"/>
@@ -80,7 +93,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Da1-09-wR4" userLabel="Avatar container">
-                        <rect key="frame" x="0.0" y="161" width="34" height="34"/>
+                        <rect key="frame" x="0.0" y="218" width="34" height="34"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w23-sL-0Rh" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -97,7 +110,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPz-5x-c1T" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="195" width="300" height="20"/>
+                        <rect key="frame" x="0.0" y="252" width="300" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="xPR-Ph-Ze9"/>
@@ -125,7 +138,7 @@
                 <constraint firstAttribute="bottom" secondItem="UPz-5x-c1T" secondAttribute="bottom" id="nsK-Gh-M3Z"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="bottom" id="s8G-Je-7GA"/>
             </constraints>
-            <size key="customSize" width="297" height="306"/>
+            <size key="customSize" width="297" height="363"/>
             <connections>
                 <outlet property="avatarContainerView" destination="Da1-09-wR4" id="tpM-P4-qUR"/>
                 <outlet property="avatarContainerViewHeightConstraint" destination="tZk-AK-JFa" id="tPu-mC-ITh"/>
@@ -136,6 +149,7 @@
                 <outlet property="cellTopLabel" destination="afj-rd-iNv" id="bTd-4q-U7e"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="fKS-MR-YPI" id="YWd-Rd-qSL"/>
                 <outlet property="headerImageView" destination="nv4-qe-4f2" id="H9o-vS-aDY"/>
+                <outlet property="headerImageViewContainer" destination="eou-Fk-Cfk" id="3wj-f6-gBa"/>
                 <outlet property="messageBubbleContainerView" destination="btS-p8-B7Z" id="2sk-5p-NEd"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="stE-iz-VHo" id="lle-iT-67d"/>
                 <outlet property="messageBubbleImageView" destination="OCS-Fu-acq" id="OuN-5t-30g"/>
@@ -147,7 +161,7 @@
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="4qS-03-PFO" id="1Qe-Ee-fUO"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="21n-XT-r8C" id="hTy-V6-fSH"/>
             </connections>
-            <point key="canvasLocation" x="245" y="232.5"/>
+            <point key="canvasLocation" x="245" y="261"/>
         </collectionViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -57,7 +57,7 @@
         finalSize = [[messageItem media] mediaViewDisplaySize];
     }
     else {
-        CGSize avatarSize = [self jsq_avatarSizeForIndexPath:indexPath];
+        CGSize avatarSize = CGSizeZero; [self jsq_avatarSizeForIndexPath:indexPath];
         
         //  from the cell xibs, there is a 2 point space between avatar and bubble
         CGFloat spacingBetweenAvatarAndBubble = 2.0f;

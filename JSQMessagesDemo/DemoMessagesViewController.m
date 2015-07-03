@@ -152,13 +152,52 @@
     /**
      *  Copy last sent message, this will be the new "received" message
      */
-    JSQMessage *copyMessage = [[self.demoData.messages lastObject] copy];
+    //JSQMessage *copyMessage = [[self.demoData.messages lastObject] copy];
     
-    if (!copyMessage) {
-        copyMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
-                                          displayName:kJSQDemoAvatarDisplayNameJobs
-                                                 text:@"First received!"];
-    }
+    NSMutableAttributedString* attributedStringPneu = [NSMutableAttributedString new];
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.paragraphSpacingBefore = 10;
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                  initWithString:@"Cinturato P7 - LONGA VIAGEM DE EMOÇÃO"
+                                                  attributes:@{NSParagraphStyleAttributeName:style,
+                                                               NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline],
+                                                               NSForegroundColorAttributeName:[UIColor whiteColor]}]];
+    
+    
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                  initWithString:@"\nO pneu de alta performance para carros de média e alta potência. A combinação perfeita para baixa resistênc..."
+                                                  attributes:@{NSParagraphStyleAttributeName:style,
+                                                               NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline],
+                                                               NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                  initWithString:@"\nR$299,89"
+                                                  attributes:@{NSParagraphStyleAttributeName:style,
+                                                               NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1],
+                                                               NSForegroundColorAttributeName:[UIColor grayColor],
+                                                               NSStrikethroughStyleAttributeName:@1}]];
+    
+    [attributedStringPneu appendAttributedString:[[NSAttributedString alloc]
+                                                  initWithString:@"\nR$250,90"
+                                                  attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+                                                               NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    
+    HXExtendedMessage* copyMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    copyMessage.attributedText = attributedStringPneu;
+    
+//    if (!copyMessage) {
+//        copyMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
+//                                          displayName:kJSQDemoAvatarDisplayNameJobs
+//                                                 text:@"First received!"];
+//    }
     
     /**
      *  Allow typing indicator to show
@@ -169,7 +208,7 @@
         [userIds removeObject:self.senderId];
         NSString *randomUserId = userIds[arc4random_uniform((int)[userIds count])];
         
-        JSQMessage *newMessage = nil;
+        HXExtendedMessage *newMessage = nil;
         id<JSQMessageMediaData> newMediaData = nil;
         id newMediaAttachmentCopy = nil;
         
@@ -229,9 +268,16 @@
             /**
              *  Last message was a text message
              */
-            newMessage = [JSQMessage messageWithSenderId:randomUserId
-                                             displayName:self.demoData.users[randomUserId]
-                                                    text:copyMessage.text];
+//            newMessage = [JSQMessage messageWithSenderId:randomUserId
+//                                             displayName:self.demoData.users[randomUserId]
+//                                                    text:copyMessage.text];
+            
+           newMessage =  [[HXExtendedMessage alloc]initWithSenderId:randomUserId
+                                     senderDisplayName:self.demoData.users[randomUserId]
+                                                  date:[NSDate date]
+                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+            newMessage.attributedText = attributedStringPneu;
+            newMessage.image = [UIImage imageNamed:@"pneu"];
         }
         
         /**
@@ -515,6 +561,8 @@
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
     }
+    
+    cell.textView.dataDetectorTypes = UIDataDetectorTypeNone;
     
     return cell;
 }

@@ -166,8 +166,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.avatarImageView.image = nil;
     self.avatarImageView.highlightedImage = nil;
-    
-     NSLog(@"prepareForReuse: %@", NSStringFromCGRect(self.messageBubbleContainerView.frame));
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
