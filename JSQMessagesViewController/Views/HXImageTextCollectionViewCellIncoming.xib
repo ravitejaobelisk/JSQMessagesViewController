@@ -41,7 +41,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCS-Fu-acq" userLabel="Bubble Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="212"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eou-Fk-Cfk" userLabel="Header Image Container View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eou-Fk-Cfk" userLabel="Header Image Container View" customClass="UIRoundedCornersView">
                                 <rect key="frame" x="6" y="0.0" width="238" height="170"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nv4-qe-4f2" userLabel="Header View">
@@ -51,21 +51,19 @@
                                             <constraint firstAttribute="width" secondItem="nv4-qe-4f2" secondAttribute="height" multiplier="1:1" id="oav-oc-gla"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5l-Iv-M7R" userLabel="Tapa Buraco da Porra do Mask">
-                                        <rect key="frame" x="0.0" y="157" width="238" height="13"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="H5l-Iv-M7R" firstAttribute="top" secondItem="nv4-qe-4f2" secondAttribute="bottom" constant="-3" id="0YZ-oV-3nJ"/>
-                                    <constraint firstItem="H5l-Iv-M7R" firstAttribute="leading" secondItem="eou-Fk-Cfk" secondAttribute="leading" id="2zc-eD-2WO"/>
-                                    <constraint firstAttribute="bottom" secondItem="H5l-Iv-M7R" secondAttribute="bottom" id="GwU-zh-QbD"/>
                                     <constraint firstAttribute="centerX" secondItem="nv4-qe-4f2" secondAttribute="centerX" id="JrI-8n-c7Y"/>
                                     <constraint firstAttribute="bottom" secondItem="nv4-qe-4f2" secondAttribute="bottom" constant="10" id="TPw-n2-jYa"/>
-                                    <constraint firstAttribute="trailing" secondItem="H5l-Iv-M7R" secondAttribute="trailing" id="whu-T1-ybk"/>
                                     <constraint firstItem="nv4-qe-4f2" firstAttribute="top" secondItem="eou-Fk-Cfk" secondAttribute="top" constant="10" id="y21-6d-E9u"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-B8-cUW" customClass="JSQMessagesCellTextView">
                                 <rect key="frame" x="6" y="170" width="238" height="42"/>

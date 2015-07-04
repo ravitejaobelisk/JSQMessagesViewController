@@ -69,7 +69,7 @@
                                                                              target:self
                                                                              action:@selector(receiveMessagePressed:)];
     
-    self.collectionView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
 
     /**
      *  Register custom menu actions for cells.

@@ -31,11 +31,11 @@
     [self.buttonViewContainer.layer addSublayer:tophairLine];
     
     //Shadow
-    self.messageBubbleContainerView.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.messageBubbleContainerView.layer.shadowOpacity = 0.7f;
-    self.messageBubbleContainerView.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
-    self.messageBubbleContainerView.layer.shadowRadius = 0.5f;
-    self.messageBubbleContainerView.layer.masksToBounds = NO;
+//    self.messageBubbleContainerView.layer.shadowColor = [UIColor grayColor].CGColor;
+//    self.messageBubbleContainerView.layer.shadowOpacity = 0.7f;
+//    self.messageBubbleContainerView.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+//    self.messageBubbleContainerView.layer.shadowRadius = 0.5f;
+//    self.messageBubbleContainerView.layer.masksToBounds = NO;
 }
 
 @end

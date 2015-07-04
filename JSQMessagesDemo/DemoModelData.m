@@ -230,12 +230,20 @@
     
     
     HXExtendedMessage* buttonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
-                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
                                                                                   date:[NSDate date]
                                                                                   type:HXExtendedDataMessageTypeAttributedTextSingleButton];
     buttonMessage.attributedText = attributedStringCremer;
     buttonMessage.titleForButton = @"Click Me";
     [self.messages addObject:buttonMessage];
+    
+    HXExtendedMessage* buttonMessageIncoming = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                             date:[NSDate date]
+                                                                             type:HXExtendedDataMessageTypeAttributedTextSingleButton];
+    buttonMessageIncoming.attributedText = attributedStringCremer;
+    buttonMessageIncoming.titleForButton = @"Click Me";
+    [self.messages addObject:buttonMessageIncoming];
     
     HXExtendedMessage* dualButtonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
                                                                 senderDisplayName:kJSQDemoAvatarDisplayNameSquires
@@ -246,6 +254,16 @@
     dualButtonMessage.titleForRightButton = @"Right Title";
     
     [self.messages addObject:dualButtonMessage];
+    
+    HXExtendedMessage* dualButtonMessageIncoming = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                    senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                                 date:[NSDate date]
+                                                                                 type:HXExtendedDataMessageTypeAttributedTextDualButton];
+    dualButtonMessageIncoming.attributedText = attributedStringCremer;
+    dualButtonMessageIncoming.titleForLeftButton = @"Left Title";
+    dualButtonMessageIncoming.titleForRightButton = @"Right Title";
+    
+    [self.messages addObject:dualButtonMessageIncoming];
     
     
     
