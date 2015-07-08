@@ -8,11 +8,15 @@
 
 #import "JSQMessagesCollectionViewCell.h"
 
+@protocol HXCollectionViewCellDelegate;
+
 @interface HXDualButtonTextCollectionViewCell : JSQMessagesCollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *buttonViewContainer;
 
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
+@property (weak, nonatomic) id<HXCollectionViewCellDelegate> extendedDelegate;
 
 @end

@@ -13,6 +13,7 @@
 
 #import "HXExtendedData.h"
 #import "HXExtendedMessage.h"
+#import "HXCollectionViewCellDelegate.h"
 
 #import "HXImageTextCollectionViewCell.h"
 #import "HXImageTextCollectionViewCellIncoming.h"

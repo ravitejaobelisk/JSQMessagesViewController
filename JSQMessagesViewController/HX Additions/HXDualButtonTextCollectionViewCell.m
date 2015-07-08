@@ -8,14 +8,22 @@
 
 #import "HXDualButtonTextCollectionViewCell.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
+#import "HXAdditions.h"
 
 
 @implementation HXDualButtonTextCollectionViewCell
 
-- (void) prepareForReuse {
-    [super prepareForReuse];
-    [self.rightButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self.leftButton addTarget:self action:@selector(didTouchLeftButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.rightButton addTarget:self action:@selector(didTouchRightButton:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)dealloc {
+    _extendedDelegate = nil;
     [self.leftButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    [self.rightButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+
 }
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
@@ -34,6 +42,14 @@
     middlehairLine.frame = CGRectMake(customAttributes.messageBubbleContainerViewWidth / 2, 0, 0.5, self.buttonViewContainer.bounds.size.height);
     middlehairLine.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2].CGColor;
     [self.buttonViewContainer.layer addSublayer:middlehairLine];
+}
+
+- (void) didTouchLeftButton:(UIButton*) sender {
+    [self.extendedDelegate messagesCollectionViewCellDidTouchLeftButton:self];
+}
+
+- (void) didTouchRightButton: (UIButton*) sender {
+    [self.extendedDelegate messagesCollectionViewCellDidTouchRightButton:self];
 }
 
 @end

@@ -83,7 +83,8 @@
                     accessoriesHeight = 170;
                     accessoriesWidth = 170;
                     break;
-                    
+                
+                case HXExtendedDataMessageTypeAttributedTextDualButton:
                 case HXExtendedDataMessageTypeAttributedTextSingleButton: {
                     accessoriesHeight = 44;
                     CGRect buttonRect = [[extendedMessageItem titleForButton] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)

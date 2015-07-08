@@ -89,7 +89,9 @@
     id<JSQMessageData> messageItem = [collectionView.dataSource collectionView:collectionView messageDataForItemAtIndexPath:indexPath];
     
     if (![messageItem conformsToProtocol:@protocol(HXExtendedData)]) {
-        return [super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+        JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell*) [super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+        cell.textView.dataDetectorTypes = UIDataDetectorTypeNone;
+        return cell;
         
     } else {
         id <HXExtendedData> extendedMessageItem = (id <HXExtendedData>) messageItem;
@@ -123,8 +125,7 @@
                 HXButtonTextCollectionViewCell* extendedCell = (HXButtonTextCollectionViewCell*) cell;
                 extendedCell.textView.attributedText = [extendedMessageItem attributedText];
                 [extendedCell.button setTitle:[extendedMessageItem titleForButton] forState:UIControlStateNormal];
-                [extendedCell.button addTarget:self action:@selector(didPressCellButton:) forControlEvents:UIControlEventTouchUpInside];
-                extendedCell.button.tag = indexPath.item;
+                extendedCell.extendedDelegate = self;
                 break;
             }
                 
@@ -133,14 +134,9 @@
                 cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
                 HXDualButtonTextCollectionViewCell* extendedCell = (HXDualButtonTextCollectionViewCell*) cell;
                 extendedCell.textView.attributedText = [extendedMessageItem attributedText];
-               
-                [extendedCell.rightButton setTitle:[extendedMessageItem titleForRightButton] forState:UIControlStateNormal];
-                [extendedCell.rightButton addTarget:self action:@selector(didPressCellRightButton:) forControlEvents:UIControlEventTouchUpInside];
-                extendedCell.rightButton.tag = indexPath.item;
-                
                 [extendedCell.leftButton setTitle:[extendedMessageItem titleForLeftButton] forState:UIControlStateNormal];
-                [extendedCell.leftButton addTarget:self action:@selector(didPressCellLeftButton:) forControlEvents:UIControlEventTouchUpInside];
-                extendedCell.leftButton.tag = indexPath.item;
+                [extendedCell.rightButton setTitle:[extendedMessageItem titleForRightButton] forState:UIControlStateNormal];
+                extendedCell.extendedDelegate = self;
             }
         }
         
@@ -203,19 +199,32 @@
     }
 }
 
-- (void) didPressCellButton:(UIButton*) sender {
-    NSIndexPath* cellIndexPath = [NSIndexPath indexPathForItem:sender.tag inSection:0];
-    NSLog(@"Press button at IndexPath: %@",cellIndexPath);
+#pragma mark - HXCollectionViewCellDelegate
+
+- (void) messagesCollectionViewCellDidTouchButton:(HXButtonTextCollectionViewCell*) cell {
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    NSLog(@"Did Press button at IndexPath: %@",indexPath);
 }
 
-- (void) didPressCellRightButton:(UIButton*) sender {
-    NSIndexPath* cellIndexPath = [NSIndexPath indexPathForItem:sender.tag inSection:0];
-    NSLog(@"Press right button at IndexPath: %@",cellIndexPath);
+
+- (void) messagesCollectionViewCellDidTouchLeftButton:(HXDualButtonTextCollectionViewCell*) cell {
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    NSLog(@"Did Press Left button at IndexPath: %@",indexPath);
 }
 
-- (void) didPressCellLeftButton:(UIButton*) sender {
-    NSIndexPath* cellIndexPath = [NSIndexPath indexPathForItem:sender.tag inSection:0];
-    NSLog(@"Press left button at IndexPath: %@",cellIndexPath);
+
+- (void) messagesCollectionViewCellDidTouchRightButton:(HXDualButtonTextCollectionViewCell*) cell {
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    NSLog(@"Did Press Right button at IndexPath: %@",indexPath);
 }
 
 

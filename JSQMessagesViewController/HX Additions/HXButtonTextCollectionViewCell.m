@@ -12,8 +12,13 @@
 
 @implementation HXButtonTextCollectionViewCell
 
-- (void) prepareForReuse {
-    [super prepareForReuse];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self.button addTarget:self action:@selector(didTouchButton:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)dealloc {
+    _extendedDelegate = nil;
     [self.button removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
 }
 
@@ -36,6 +41,10 @@
 //    self.messageBubbleContainerView.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
 //    self.messageBubbleContainerView.layer.shadowRadius = 0.5f;
 //    self.messageBubbleContainerView.layer.masksToBounds = NO;
+}
+
+- (void) didTouchButton:(UIButton*) sender {
+    [self.extendedDelegate messagesCollectionViewCellDidTouchButton:self];
 }
 
 @end
