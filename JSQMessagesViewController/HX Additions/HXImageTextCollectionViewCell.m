@@ -16,7 +16,7 @@
 {
     [super prepareForReuse];
     
-    self.headerImageView = nil;
+    self.headerImageView.image = nil;
 }
 
 @end

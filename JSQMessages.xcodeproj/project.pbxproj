@@ -21,6 +21,15 @@
 		722CB9841B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722CB97F1B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.xib */; };
 		72329D9E1B433C510027945E /* HXImageTextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72329D9D1B433C510027945E /* HXImageTextCollectionViewCell.m */; };
 		72890B021B41E7A90065EC7E /* HXExtendedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72890B011B41E7A90065EC7E /* HXExtendedMessage.m */; };
+		7295C6751B4EFEA800AA2C0E /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66C1B4EFEA800AA2C0E /* 9.png */; };
+		7295C6761B4EFEA800AA2C0E /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66D1B4EFEA800AA2C0E /* 8.png */; };
+		7295C6771B4EFEA800AA2C0E /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66E1B4EFEA800AA2C0E /* 7.png */; };
+		7295C6781B4EFEA800AA2C0E /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66F1B4EFEA800AA2C0E /* 6.png */; };
+		7295C6791B4EFEA800AA2C0E /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C6701B4EFEA800AA2C0E /* 5.png */; };
+		7295C67A1B4EFEA800AA2C0E /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C6711B4EFEA800AA2C0E /* 4.png */; };
+		7295C67B1B4EFEA800AA2C0E /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C6721B4EFEA800AA2C0E /* 3.png */; };
+		7295C67C1B4EFEA800AA2C0E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C6731B4EFEA800AA2C0E /* 2.png */; };
+		7295C67D1B4EFEA800AA2C0E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C6741B4EFEA800AA2C0E /* 1.png */; };
 		729F2F961B44745700FB2324 /* HXCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F2F951B44745700FB2324 /* HXCollectionViewFlowLayout.m */; };
 		729F2F9B1B44891C00FB2324 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 729F2F9A1B44891C00FB2324 /* logo.png */; };
 		729F2F9E1B44965700FB2324 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729F2F9C1B44965700FB2324 /* JSQMessagesCollectionViewCellIncoming.xib */; };
@@ -168,6 +177,15 @@
 		72890B001B41E7A90065EC7E /* HXExtendedMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXExtendedMessage.h; path = ../Model/HXExtendedMessage.h; sourceTree = "<group>"; };
 		72890B011B41E7A90065EC7E /* HXExtendedMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXExtendedMessage.m; path = ../Model/HXExtendedMessage.m; sourceTree = "<group>"; };
 		72890B031B41E7F20065EC7E /* HXExtendedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HXExtendedData.h; path = ../Model/HXExtendedData.h; sourceTree = "<group>"; };
+		7295C66C1B4EFEA800AA2C0E /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		7295C66D1B4EFEA800AA2C0E /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		7295C66E1B4EFEA800AA2C0E /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		7295C66F1B4EFEA800AA2C0E /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		7295C6701B4EFEA800AA2C0E /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		7295C6711B4EFEA800AA2C0E /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		7295C6721B4EFEA800AA2C0E /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		7295C6731B4EFEA800AA2C0E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		7295C6741B4EFEA800AA2C0E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		729F2F941B44745700FB2324 /* HXCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		729F2F951B44745700FB2324 /* HXCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		729F2F9A1B44891C00FB2324 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -440,15 +458,32 @@
 			isa = PBXGroup;
 			children = (
 				7218D3F61B43651600738171 /* HXAdditions.h */,
-				729F2F9A1B44891C00FB2324 /* logo.png */,
-				722CB9731B46F99700CAD94D /* cremeDentalQuadrado.png */,
-				722CB9751B47026A00CAD94D /* pneu.png */,
+				7295C66B1B4EFE9700AA2C0E /* Test Images */,
 				7218D3FA1B43676700738171 /* Controllers */,
 				7218D3EF1B43600400738171 /* Model */,
 				7218D3EE1B435FC200738171 /* Views */,
 				729F2F971B44745E00FB2324 /* Layout */,
 			);
 			path = "HX Additions";
+			sourceTree = "<group>";
+		};
+		7295C66B1B4EFE9700AA2C0E /* Test Images */ = {
+			isa = PBXGroup;
+			children = (
+				7295C66C1B4EFEA800AA2C0E /* 9.png */,
+				7295C66D1B4EFEA800AA2C0E /* 8.png */,
+				7295C66E1B4EFEA800AA2C0E /* 7.png */,
+				7295C66F1B4EFEA800AA2C0E /* 6.png */,
+				7295C6701B4EFEA800AA2C0E /* 5.png */,
+				7295C6711B4EFEA800AA2C0E /* 4.png */,
+				7295C6721B4EFEA800AA2C0E /* 3.png */,
+				7295C6731B4EFEA800AA2C0E /* 2.png */,
+				7295C6741B4EFEA800AA2C0E /* 1.png */,
+				729F2F9A1B44891C00FB2324 /* logo.png */,
+				722CB9731B46F99700CAD94D /* cremeDentalQuadrado.png */,
+				722CB9751B47026A00CAD94D /* pneu.png */,
+			);
+			name = "Test Images";
 			sourceTree = "<group>";
 		};
 		729F2F971B44745E00FB2324 /* Layout */ = {
@@ -875,7 +910,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				722CB9761B47026A00CAD94D /* pneu.png in Resources */,
+				7295C6781B4EFEA800AA2C0E /* 6.png in Resources */,
 				886C33FF19F45E30006B4997 /* JSQMessagesViewController.podspec in Resources */,
+				7295C67A1B4EFEA800AA2C0E /* 4.png in Resources */,
 				8861666D19F492B70025B958 /* JSQMessagesAssets.bundle in Resources */,
 				729F2F9B1B44891C00FB2324 /* logo.png in Resources */,
 				88A25FCF19D8E01A00924534 /* HXImageTextCollectionViewCellOutgoing.xib in Resources */,
@@ -884,15 +921,22 @@
 				729F2FA31B44970900FB2324 /* HXButtonTextCollectionViewCellIncoming.xib in Resources */,
 				722CB9841B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.xib in Resources */,
 				88A25F3A19D8DF2500924534 /* Images.xcassets in Resources */,
+				7295C6761B4EFEA800AA2C0E /* 8.png in Resources */,
+				7295C6771B4EFEA800AA2C0E /* 7.png in Resources */,
+				7295C67B1B4EFEA800AA2C0E /* 3.png in Resources */,
 				88A25FBC19D8E01A00924534 /* HXMessagesViewController.xib in Resources */,
 				88A25FD819D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				722CB9821B47151A00CAD94D /* HXDualButtonTextCollectionViewCellIncoming.xib in Resources */,
 				729F2FA21B44970900FB2324 /* HXButtonTextCollectionViewCellOutgoing.xib in Resources */,
+				7295C67C1B4EFEA800AA2C0E /* 2.png in Resources */,
 				88A25F3919D8DF2500924534 /* Main.storyboard in Resources */,
 				729F2F9F1B44965700FB2324 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				88A25FD419D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				722CB9741B46F99700CAD94D /* cremeDentalQuadrado.png in Resources */,
 				729F2F9E1B44965700FB2324 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
+				7295C6791B4EFEA800AA2C0E /* 5.png in Resources */,
+				7295C67D1B4EFEA800AA2C0E /* 1.png in Resources */,
+				7295C6751B4EFEA800AA2C0E /* 9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

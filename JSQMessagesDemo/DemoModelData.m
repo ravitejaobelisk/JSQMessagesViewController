@@ -98,39 +98,39 @@
      *
      *  You should have a mutable array or orderedSet, or something.
      */
-    self.messages = [[NSMutableArray alloc] initWithObjects:
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate distantPast]
-                                                     text:@"Welcome to JSQMessages: A messaging UI framework for iOS."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameWoz
-                                                     date:[NSDate distantPast]
-                                                     text:@"It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate distantPast]
-                                                     text:@"It even has data detectors. You can call me tonight. My cell number is 123-456-7890. My website is www.hexedbits.com."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameJobs
-                                                     date:[NSDate date]
-                                                     text:@"JSQMessagesViewController is nearly an exact replica of the iOS Messages App. And perhaps, better."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameCook
-                                                     date:[NSDate date]
-                                                     text:@"It is unit-tested, free, open-source, and documented."],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate date]
-                                                     text:@"Now with media messages!"],
-                     nil];
+//    self.messages = [[NSMutableArray alloc] initWithObjects:
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"Welcome to JSQMessages: A messaging UI framework for iOS."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameWoz
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"It even has data detectors. You can call me tonight. My cell number is 123-456-7890. My website is www.hexedbits.com."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameJobs
+//                                                     date:[NSDate date]
+//                                                     text:@"JSQMessagesViewController is nearly an exact replica of the iOS Messages App. And perhaps, better."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameCook
+//                                                     date:[NSDate date]
+//                                                     text:@"It is unit-tested, free, open-source, and documented."],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate date]
+//                                                     text:@"Now with media messages!"],
+ //                    nil];
     
-    //self.messages = [NSMutableArray array];
+    self.messages = [NSMutableArray array];
     
     /**
      Testing: Attributed Strings
@@ -211,9 +211,106 @@
                                                                    date:[NSDate date]
                                                                   type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
     
-    imageHeaderMessage.attributedText = attributedStringCremer;
-    imageHeaderMessage.image = [UIImage imageNamed:@"cremeDentalQuadrado"];
+    imageHeaderMessage.attributedText = [[NSAttributedString alloc]initWithString:@"1"];
+    imageHeaderMessage.image = [UIImage imageNamed:@"1"];
     [self.messages addObject:imageHeaderMessage];
+    
+    
+    
+    
+    HXExtendedMessage* imageHeaderMessage2 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage2.attributedText = [[NSAttributedString alloc]initWithString:@"2"];
+    imageHeaderMessage2.image = [UIImage imageNamed:@"2"];
+    [self.messages addObject:imageHeaderMessage2];
+    
+    
+    HXExtendedMessage* imageHeaderMessageOutgoing2 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                      senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                   date:[NSDate date]
+                                                                                   type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessageOutgoing2.attributedText = [[NSAttributedString alloc]initWithString:@"2"];
+    imageHeaderMessageOutgoing2.image = [UIImage imageNamed:@"2"];
+    [self.messages addObject:imageHeaderMessageOutgoing2];
+    
+    
+    
+    HXExtendedMessage* imageHeaderMessage3 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage3.attributedText = [[NSAttributedString alloc]initWithString:@"3"];
+    imageHeaderMessage3.image = [UIImage imageNamed:@"3"];
+    [self.messages addObject:imageHeaderMessage3];
+
+    HXExtendedMessage* imageHeaderMessage4 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage4.attributedText = [[NSAttributedString alloc]initWithString:@"4"];
+    imageHeaderMessage4.image = [UIImage imageNamed:@"4"];
+    [self.messages addObject:imageHeaderMessage4];
+
+    HXExtendedMessage* imageHeaderMessag5 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessag5.attributedText = [[NSAttributedString alloc]initWithString:@"5"];
+    imageHeaderMessag5.image = [UIImage imageNamed:@"5"];
+    [self.messages addObject:imageHeaderMessag5];
+    
+    HXExtendedMessage* imageHeaderMessag6 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessag6.attributedText = [[NSAttributedString alloc]initWithString:@"6"];;
+    imageHeaderMessag6.image = [UIImage imageNamed:@"6"];
+    [self.messages addObject:imageHeaderMessag6];
+    
+    
+    HXExtendedMessage* imageHeaderMessagOutGoing6 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessagOutGoing6.attributedText = [[NSAttributedString alloc]initWithString:@"6"];;
+    imageHeaderMessagOutGoing6.image = [UIImage imageNamed:@"6"];
+    [self.messages addObject:imageHeaderMessagOutGoing6];
+    
+    HXExtendedMessage* imageHeaderMessage7 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage7.attributedText = [[NSAttributedString alloc]initWithString:@"7"];;
+    imageHeaderMessage7.image = [UIImage imageNamed:@"7"];
+    [self.messages addObject:imageHeaderMessage7];
+    
+    HXExtendedMessage* imageHeaderMessage8 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage8.attributedText = [[NSAttributedString alloc]initWithString:@"8"];;
+    imageHeaderMessage8.image = [UIImage imageNamed:@"8"];
+    [self.messages addObject:imageHeaderMessage8];
+    
+    HXExtendedMessage* imageHeaderMessag9 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                  date:[NSDate date]
+                                                                                  type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessag9.attributedText = [[NSAttributedString alloc]initWithString:@"9"];;
+    imageHeaderMessag9.image = [UIImage imageNamed:@"9"];
+    [self.messages addObject:imageHeaderMessag9];
     
     
     
