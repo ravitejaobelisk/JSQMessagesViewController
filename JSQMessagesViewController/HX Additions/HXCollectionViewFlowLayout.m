@@ -9,6 +9,7 @@
 #import "HXCollectionViewFlowLayout.h"
 #import "HXAdditions.h"
 #import "UIImage+JSQMessages.h"
+#import "HXCollectionViewLayoutAttributes.h"
 
 @interface HXCollectionViewFlowLayout()
 
@@ -37,9 +38,17 @@
 - (void)config {
     _bubbleImageAssetWidth = [UIImage jsq_bubbleCompactImage].size.width;
     
+    self.incomingAvatarViewSize = CGSizeZero;
+    self.outgoingAvatarViewSize = CGSizeZero;
+    
     _messageBubbleCache = [NSCache new];
     _messageBubbleCache.name = @"JSQMessagesCollectionViewFlowLayout.messageBubbleCache";
     _messageBubbleCache.countLimit = 200;
+}
+
++ (Class)layoutAttributesClass
+{
+    return [HXCollectionViewLayoutAttributes class];
 }
 
 
@@ -57,7 +66,7 @@
         finalSize = [[messageItem media] mediaViewDisplaySize];
     }
     else {
-        CGSize avatarSize = CGSizeZero; [self jsq_avatarSizeForIndexPath:indexPath];
+        CGSize avatarSize = CGSizeZero;// [self jsq_avatarSizeForIndexPath:indexPath];
         
         //  from the cell xibs, there is a 2 point space between avatar and bubble
         CGFloat spacingBetweenAvatarAndBubble = 2.0f;
@@ -129,17 +138,54 @@
 }
 
 
-- (CGSize)jsq_avatarSizeForIndexPath:(NSIndexPath *)indexPath
+//- (CGSize)jsq_avatarSizeForIndexPath:(NSIndexPath *)indexPath
+//{
+//    id<JSQMessageData> messageData = [self.collectionView.dataSource collectionView:self.collectionView messageDataForItemAtIndexPath:indexPath];
+//    NSString *messageSender = [messageData senderId];
+//    
+//    if ([messageSender isEqualToString:[self.collectionView.dataSource senderId]]) {
+//        return self.outgoingAvatarViewSize;
+//    }
+//    
+//    return self.incomingAvatarViewSize;
+//}
+
+
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
-    id<JSQMessageData> messageData = [self.collectionView.dataSource collectionView:self.collectionView messageDataForItemAtIndexPath:indexPath];
-    NSString *messageSender = [messageData senderId];
+    NSArray *attributesInRect = [super layoutAttributesForElementsInRect:rect];
     
-    if ([messageSender isEqualToString:[self.collectionView.dataSource senderId]]) {
-        return self.outgoingAvatarViewSize;
-    }
+    [attributesInRect enumerateObjectsUsingBlock:^(HXCollectionViewLayoutAttributes *attributesItem, NSUInteger idx, BOOL *stop) {
+        if (attributesItem.representedElementCategory == UICollectionElementCategoryCell) {
+            [self hx_configureMessageCellLayoutAttributes:attributesItem];
+        }
+        else {
+            attributesItem.zIndex = -1;
+        }
+    }];
     
-    return self.incomingAvatarViewSize;
+    return attributesInRect;
 }
 
+- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HXCollectionViewLayoutAttributes *customAttributes = (HXCollectionViewLayoutAttributes *)[super layoutAttributesForItemAtIndexPath:indexPath];
+    
+    if (customAttributes.representedElementCategory == UICollectionElementCategoryCell) {
+        [self hx_configureMessageCellLayoutAttributes:customAttributes];
+    }
+    
+    return customAttributes;
+}
+
+
+- (void)hx_configureMessageCellLayoutAttributes:(HXCollectionViewLayoutAttributes*) layoutAttributes
+{
+    NSIndexPath *indexPath = layoutAttributes.indexPath;
+    
+    CGSize messageBubbleSize = [self messageBubbleSizeForItemAtIndexPath:indexPath];
+    
+    layoutAttributes.messageBubbleContainerViewHeight = messageBubbleSize.height;
+}
 
 @end

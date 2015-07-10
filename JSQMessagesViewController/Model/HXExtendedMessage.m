@@ -54,7 +54,7 @@
 
 
 - (NSUInteger)hash {
-    NSUInteger contentHash = self.text.hash ^ self.image.hash ^ self.titleForButton.hash ^ self.titleForLeftButton.hash ^ self.titleForRightButton.hash;
+    NSUInteger contentHash = self.text.hash ^ self.image.hash ^ self.titleForButton.hash ^ self.titleForLeftButton.hash ^ self.titleForRightButton.hash + self.messageType;
     return self.senderId.hash ^ self.date.hash ^ contentHash;
 }
 

@@ -10,6 +10,7 @@
 
 #import "JSQMessages.h"
 #import "HXAdditions.h"
+#import "DemoButtonMessage.h"
 
 @interface HXMessagesViewController()
 
@@ -205,6 +206,15 @@
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
     if (indexPath == nil) {
         return;
+    }
+    
+    HXExtendedMessage* extendedMessage = (HXExtendedMessage*) [self.collectionView.dataSource collectionView:self.collectionView messageDataForItemAtIndexPath:indexPath];
+    if ([extendedMessage isKindOfClass:[DemoButtonMessage class]]) {
+        DemoButtonMessage* message = (DemoButtonMessage*) extendedMessage;
+        message.answered = YES;
+        [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
+        [self.collectionView reloadData];
+
     }
     NSLog(@"Did Press button at IndexPath: %@",indexPath);
 }

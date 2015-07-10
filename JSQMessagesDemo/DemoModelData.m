@@ -19,6 +19,7 @@
 #import "DemoModelData.h"
 
 #import "NSUserDefaults+DemoSettings.h"
+#import "DemoButtonMessage.h"
 
 
 /**
@@ -138,7 +139,7 @@
     NSMutableAttributedString* attributedStringCremer = [NSMutableAttributedString new];
     
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    style.paragraphSpacingBefore = 10;
+    style.paragraphSpacingBefore = 6;
     
     [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
                                               initWithString:@"Clareador Whiteness Perfect - FGM"
@@ -162,7 +163,7 @@
                                                            NSStrikethroughStyleAttributeName:@1}]];
     
     [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
-                                              initWithString:@"\nR$67,90"
+                                              initWithString:@" R$67,90"
                                               attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
                                                            NSForegroundColorAttributeName:[UIColor grayColor]}]];
     
@@ -326,15 +327,16 @@
     
     
     
-    HXExtendedMessage* buttonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+    DemoButtonMessage* buttonMessage = [[DemoButtonMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
                                                                      senderDisplayName:kJSQDemoAvatarDisplayNameCook
                                                                                   date:[NSDate date]
                                                                                   type:HXExtendedDataMessageTypeAttributedTextSingleButton];
     buttonMessage.attributedText = attributedStringCremer;
     buttonMessage.titleForButton = @"Click Me";
+    buttonMessage.answered = NO;
     [self.messages addObject:buttonMessage];
     
-    HXExtendedMessage* buttonMessageIncoming = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+    DemoButtonMessage* buttonMessageIncoming = [[DemoButtonMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
                                                                 senderDisplayName:kJSQDemoAvatarDisplayNameCook
                                                                              date:[NSDate date]
                                                                              type:HXExtendedDataMessageTypeAttributedTextSingleButton];
