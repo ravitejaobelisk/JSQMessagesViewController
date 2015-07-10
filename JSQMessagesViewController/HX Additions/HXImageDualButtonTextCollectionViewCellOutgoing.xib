@@ -3,16 +3,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="23f-xH-rkY" customClass="HXImageTextCollectionViewCellOutgoing">
-            <rect key="frame" x="0.0" y="0.0" width="304" height="263"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="23f-xH-rkY" customClass="HXImageDualButtonTextCollectionViewCellOutgoing">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="359"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="304" height="263"/>
+                <rect key="frame" x="0.0" y="0.0" width="304" height="359"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell top label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxM-YD-sVG" userLabel="Cell top label" customClass="JSQMessagesLabel">
@@ -36,10 +37,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zh-vR-QJW" userLabel="Bubble container">
-                        <rect key="frame" x="24" y="40" width="244" height="203"/>
+                        <rect key="frame" x="24" y="40" width="244" height="299"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2qm-c6-OZf" userLabel="Bubble Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="244" height="203"/>
+                                <rect key="frame" x="0.0" y="0.0" width="244" height="299"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaM-6Z-Qdb" userLabel="Header Image Container View" customClass="UIRoundedCornersView">
                                 <rect key="frame" x="0.0" y="0.0" width="238" height="120"/>
@@ -67,11 +68,38 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-aM-0Dr" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="120" width="238" height="83"/>
+                                <rect key="frame" x="0.0" y="120" width="238" height="135"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBq-SR-rs8" userLabel="Button Container View" customClass="UIRoundedCornersView">
+                                <rect key="frame" x="0.0" y="255" width="238" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJB-0N-gOt">
+                                        <rect key="frame" x="0.0" y="7" width="119" height="30"/>
+                                        <state key="normal" title="Left Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuH-1H-Bv0">
+                                        <rect key="frame" x="119" y="7" width="119" height="30"/>
+                                        <state key="normal" title="Right Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="eJB-0N-gOt" secondAttribute="centerY" id="0Zj-xD-rmO"/>
+                                    <constraint firstAttribute="trailing" secondItem="vuH-1H-Bv0" secondAttribute="trailing" id="A1b-vV-Yas"/>
+                                    <constraint firstItem="eJB-0N-gOt" firstAttribute="leading" secondItem="dBq-SR-rs8" secondAttribute="leading" id="GzZ-l1-IWA"/>
+                                    <constraint firstAttribute="centerX" secondItem="eJB-0N-gOt" secondAttribute="trailing" id="Ktw-hY-qZ3"/>
+                                    <constraint firstAttribute="height" constant="44" id="SPg-mb-Voq"/>
+                                    <constraint firstAttribute="centerY" secondItem="vuH-1H-Bv0" secondAttribute="centerY" id="VBo-ZE-cuX"/>
+                                    <constraint firstItem="vuH-1H-Bv0" firstAttribute="leading" secondItem="dBq-SR-rs8" secondAttribute="centerX" id="Vyl-17-OWG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -83,14 +111,17 @@
                             <constraint firstItem="2qm-c6-OZf" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="top" id="DbW-Cx-zOW"/>
                             <constraint firstItem="2qm-c6-OZf" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" id="H1H-yn-Raq"/>
                             <constraint firstItem="aaM-6Z-Qdb" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="top" id="H1o-y2-Hel"/>
-                            <constraint firstAttribute="bottom" secondItem="vLY-aM-0Dr" secondAttribute="bottom" id="UbF-Bl-Q7v"/>
                             <constraint firstAttribute="trailing" secondItem="vLY-aM-0Dr" secondAttribute="trailing" constant="6" id="aVg-yy-8K7"/>
+                            <constraint firstItem="dBq-SR-rs8" firstAttribute="top" secondItem="vLY-aM-0Dr" secondAttribute="bottom" id="gpq-oD-zNI"/>
                             <constraint firstAttribute="width" constant="244" id="imD-52-K45"/>
                             <constraint firstAttribute="bottom" secondItem="2qm-c6-OZf" secondAttribute="bottom" id="lts-Ve-wSh"/>
+                            <constraint firstAttribute="trailing" secondItem="dBq-SR-rs8" secondAttribute="trailing" constant="6" id="rAL-Wz-NKb"/>
+                            <constraint firstItem="dBq-SR-rs8" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" id="tVx-wu-yUt"/>
+                            <constraint firstAttribute="bottom" secondItem="dBq-SR-rs8" secondAttribute="bottom" id="xe5-3z-sfb"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X89-B1-aAd" userLabel="Avatar container">
-                        <rect key="frame" x="270" y="209" width="34" height="34"/>
+                        <rect key="frame" x="270" y="305" width="34" height="34"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y9b-D9-Q7W" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -107,7 +138,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-dI-YDD" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="243" width="304" height="20"/>
+                        <rect key="frame" x="0.0" y="339" width="304" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="cPs-M4-tjX"/>
@@ -135,30 +166,33 @@
                 <constraint firstItem="p52-YN-yLu" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="tTj-Mp-0va"/>
                 <constraint firstItem="X89-B1-aAd" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="trailing" constant="2" id="vMz-Yi-B0w"/>
             </constraints>
-            <size key="customSize" width="301" height="354"/>
+            <size key="customSize" width="301" height="450"/>
             <connections>
                 <outlet property="avatarContainerView" destination="X89-B1-aAd" id="WSI-Zc-qIE"/>
                 <outlet property="avatarContainerViewHeightConstraint" destination="tgw-aN-JJu" id="pgV-tY-5Cm"/>
                 <outlet property="avatarContainerViewWidthConstraint" destination="Pkm-tW-k4z" id="Cpe-d3-yiq"/>
                 <outlet property="avatarImageView" destination="y9b-D9-Q7W" id="cZo-SR-S9h"/>
+                <outlet property="buttonViewContainer" destination="dBq-SR-rs8" id="pjp-Em-c4H"/>
                 <outlet property="cellBottomLabel" destination="7Uc-dI-YDD" id="gVD-C2-UcZ"/>
                 <outlet property="cellBottomLabelHeightConstraint" destination="cPs-M4-tjX" id="b5k-6e-iA8"/>
                 <outlet property="cellTopLabel" destination="jxM-YD-sVG" id="acH-pr-spx"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="9oK-E7-iXA" id="MZM-kV-2dI"/>
                 <outlet property="headerImageView" destination="Wle-DU-T9Q" id="G6S-mV-lTc"/>
                 <outlet property="headerImageViewContainer" destination="aaM-6Z-Qdb" id="miG-xE-obf"/>
+                <outlet property="leftButton" destination="eJB-0N-gOt" id="CA5-sW-4Px"/>
                 <outlet property="messageBubbleContainerView" destination="2zh-vR-QJW" id="pu0-GU-eZl"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="imD-52-K45" id="Xld-Pa-yJw"/>
                 <outlet property="messageBubbleImageView" destination="2qm-c6-OZf" id="bpy-Gv-jSh"/>
                 <outlet property="messageBubbleTopLabel" destination="p52-YN-yLu" id="SLH-sA-Chu"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="8TB-va-f8L" id="FNt-BS-Wxi"/>
+                <outlet property="rightButton" destination="vuH-1H-Bv0" id="Njb-YD-cZz"/>
                 <outlet property="textView" destination="vLY-aM-0Dr" id="YEp-mW-xIY"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="aVg-yy-8K7" id="CIe-Bi-eng"/>
-                <outlet property="textViewBottomVerticalSpaceConstraint" destination="UbF-Bl-Q7v" id="KHP-49-3u4"/>
+                <outlet property="textViewBottomVerticalSpaceConstraint" destination="gpq-oD-zNI" id="v3N-6L-H5u"/>
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="7rI-Nc-AK3" id="ciu-j6-IpH"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="Csa-yS-iyU" id="h1p-q3-OxG"/>
             </connections>
-            <point key="canvasLocation" x="363" y="199.5"/>
+            <point key="canvasLocation" x="363" y="247.5"/>
         </collectionViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

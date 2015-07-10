@@ -11,6 +11,7 @@
 #import "JSQMessages.h"
 #import "HXAdditions.h"
 #import "DemoButtonMessage.h"
+#import "DemoDualButtonMesssage.h"
 
 @interface HXMessagesViewController()
 
@@ -22,6 +23,9 @@
 
 @property (copy, nonatomic) NSString *outgoingDualButtonTextCellIdentifier;
 @property (copy, nonatomic) NSString *incomingDualButtonTextCellIdentifier;
+
+@property (copy, nonatomic) NSString *outgoingImageDualButtonTextCellIdentifier;
+@property (copy, nonatomic) NSString *incomingImageDualButtonTextCellIdentifier;
 
 @end
 
@@ -47,6 +51,7 @@
     [self registerHXImageTextCell];
     [self registerHXButtonTextCell];
     [self registerDualHXButtonTextCell];
+    [self registerImageDualHXButtonTextCell];
 }
 
 
@@ -82,6 +87,17 @@
     
     [self.collectionView registerNib:[HXDualButtonTextCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:self.incomingDualButtonTextCellIdentifier];
+}
+
+- (void) registerImageDualHXButtonTextCell {
+    self.outgoingImageDualButtonTextCellIdentifier = [HXImageDualButtonTextCollectionViewCellOutgoing cellReuseIdentifier];
+    self.incomingImageDualButtonTextCellIdentifier = [HXImageDualButtonTextCollectionViewCellIncoming cellReuseIdentifier];
+    
+    [self.collectionView registerNib:[HXImageDualButtonTextCollectionViewCellOutgoing nib]
+          forCellWithReuseIdentifier: self.outgoingImageDualButtonTextCellIdentifier];
+    
+    [self.collectionView registerNib:[HXImageDualButtonTextCollectionViewCellIncoming nib]
+          forCellWithReuseIdentifier:self.incomingImageDualButtonTextCellIdentifier];
 }
 
 
@@ -138,6 +154,19 @@
                 [extendedCell.leftButton setTitle:[extendedMessageItem titleForLeftButton] forState:UIControlStateNormal];
                 [extendedCell.rightButton setTitle:[extendedMessageItem titleForRightButton] forState:UIControlStateNormal];
                 extendedCell.extendedDelegate = self;
+                break;
+            }
+                
+            case HXExtendedDataMessageTypeAttributedTextHeaderImageDualButton: {
+                cellIdentifier = isOutgoingMessage ? self.outgoingImageDualButtonTextCellIdentifier : self.incomingImageDualButtonTextCellIdentifier;
+                cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+                HXImageDualButtonTextCollectionViewCell* extendedCell = (HXImageDualButtonTextCollectionViewCell*) cell;
+                extendedCell.headerImageView.image = [extendedMessageItem image];
+                extendedCell.textView.attributedText = [extendedMessageItem attributedText];
+                [extendedCell.leftButton setTitle:[extendedMessageItem titleForLeftButton] forState:UIControlStateNormal];
+                [extendedCell.rightButton setTitle:[extendedMessageItem titleForRightButton] forState:UIControlStateNormal];
+                extendedCell.extendedDelegate = self;
+                break;
             }
         }
         
@@ -214,7 +243,6 @@
         message.answered = YES;
         [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
         [self.collectionView reloadData];
-
     }
     NSLog(@"Did Press button at IndexPath: %@",indexPath);
 }

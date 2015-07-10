@@ -27,4 +27,8 @@
 #import "HXDualButtonTextCollectionViewCellIncoming.h"
 #import "HXDualButtonTextCollectionViewCellOutgoing.h"
 
+#import "HXImageDualButtonTextCollectionViewCell.h"
+#import "HXImageDualButtonTextCollectionViewCellOutgoing.h"
+#import "HXImageDualButtonTextCollectionViewCellIncoming.h"
+
 #endif

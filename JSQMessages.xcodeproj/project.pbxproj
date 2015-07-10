@@ -23,6 +23,12 @@
 		72890B021B41E7A90065EC7E /* HXExtendedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72890B011B41E7A90065EC7E /* HXExtendedMessage.m */; };
 		72914F491B4FF87500F52156 /* DemoButtonMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F481B4FF87500F52156 /* DemoButtonMessage.m */; };
 		72914F4C1B50057B00F52156 /* HXCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F4B1B50057B00F52156 /* HXCollectionViewLayoutAttributes.m */; };
+		72914F4F1B5014D700F52156 /* DemoDualButtonMesssage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F4E1B5014D700F52156 /* DemoDualButtonMesssage.m */; };
+		72914F571B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F511B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.m */; };
+		72914F581B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F531B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.m */; };
+		72914F591B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F551B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.m */; };
+		72914F5C1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72914F5A1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib */; };
+		72914F5D1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72914F5B1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.xib */; };
 		7295C6751B4EFEA800AA2C0E /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66C1B4EFEA800AA2C0E /* 9.png */; };
 		7295C6761B4EFEA800AA2C0E /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66D1B4EFEA800AA2C0E /* 8.png */; };
 		7295C6771B4EFEA800AA2C0E /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 7295C66E1B4EFEA800AA2C0E /* 7.png */; };
@@ -183,6 +189,16 @@
 		72914F481B4FF87500F52156 /* DemoButtonMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonMessage.m; sourceTree = "<group>"; };
 		72914F4A1B50057B00F52156 /* HXCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
 		72914F4B1B50057B00F52156 /* HXCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		72914F4D1B5014D700F52156 /* DemoDualButtonMesssage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDualButtonMesssage.h; sourceTree = "<group>"; };
+		72914F4E1B5014D700F52156 /* DemoDualButtonMesssage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoDualButtonMesssage.m; sourceTree = "<group>"; };
+		72914F511B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXImageDualButtonTextCollectionViewCellOutgoing.m; sourceTree = "<group>"; };
+		72914F521B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXImageDualButtonTextCollectionViewCellOutgoing.h; sourceTree = "<group>"; };
+		72914F531B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXImageDualButtonTextCollectionViewCellIncoming.m; sourceTree = "<group>"; };
+		72914F541B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXImageDualButtonTextCollectionViewCellIncoming.h; sourceTree = "<group>"; };
+		72914F551B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXImageDualButtonTextCollectionViewCell.m; sourceTree = "<group>"; };
+		72914F561B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXImageDualButtonTextCollectionViewCell.h; sourceTree = "<group>"; };
+		72914F5A1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXImageDualButtonTextCollectionViewCellIncoming.xib; sourceTree = "<group>"; };
+		72914F5B1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXImageDualButtonTextCollectionViewCellOutgoing.xib; sourceTree = "<group>"; };
 		7295C66C1B4EFEA800AA2C0E /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		7295C66D1B4EFEA800AA2C0E /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		7295C66E1B4EFEA800AA2C0E /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
@@ -418,6 +434,7 @@
 			children = (
 				7216AEC61B4826A300BE8F6E /* UIRoundedCornersView.h */,
 				7216AEC71B4826A300BE8F6E /* UIRoundedCornersView.m */,
+				72914F501B5024BF00F52156 /* HXImageDualButtonTextCollectionViewCells */,
 				722CB9771B4714A100CAD94D /* HXDualButtonTextCollectionViewCells */,
 				729F2FAD1B44996F00FB2324 /* HXSingleButtonTextCollectionViewCells */,
 				729F2FAE1B44998A00FB2324 /* HXImageTextCollectionViewCells */,
@@ -473,9 +490,26 @@
 			path = "HX Additions";
 			sourceTree = "<group>";
 		};
+		72914F501B5024BF00F52156 /* HXImageDualButtonTextCollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				72914F511B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.m */,
+				72914F521B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.h */,
+				72914F531B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.m */,
+				72914F541B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.h */,
+				72914F551B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.m */,
+				72914F561B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.h */,
+				72914F5A1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib */,
+				72914F5B1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.xib */,
+			);
+			name = HXImageDualButtonTextCollectionViewCells;
+			sourceTree = "<group>";
+		};
 		7295C66B1B4EFE9700AA2C0E /* Test Classes and Images */ = {
 			isa = PBXGroup;
 			children = (
+				72914F4D1B5014D700F52156 /* DemoDualButtonMesssage.h */,
+				72914F4E1B5014D700F52156 /* DemoDualButtonMesssage.m */,
 				72914F471B4FF87500F52156 /* DemoButtonMessage.h */,
 				72914F481B4FF87500F52156 /* DemoButtonMessage.m */,
 				7295C66C1B4EFEA800AA2C0E /* 9.png */,
@@ -942,7 +976,9 @@
 				88A25F3919D8DF2500924534 /* Main.storyboard in Resources */,
 				729F2F9F1B44965700FB2324 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				88A25FD419D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
+				72914F5C1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib in Resources */,
 				722CB9741B46F99700CAD94D /* cremeDentalQuadrado.png in Resources */,
+				72914F5D1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.xib in Resources */,
 				729F2F9E1B44965700FB2324 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				7295C6791B4EFEA800AA2C0E /* 5.png in Resources */,
 				7295C67D1B4EFEA800AA2C0E /* 1.png in Resources */,
@@ -1033,9 +1069,11 @@
 				88A25FD119D8E01A00924534 /* JSQMessagesInputToolbar.m in Sources */,
 				729F2F961B44745700FB2324 /* HXCollectionViewFlowLayout.m in Sources */,
 				88A25FCB19D8E01A00924534 /* JSQMessagesCollectionViewCell.m in Sources */,
+				72914F591B50267500F52156 /* HXImageDualButtonTextCollectionViewCell.m in Sources */,
 				72890B021B41E7A90065EC7E /* HXExtendedMessage.m in Sources */,
 				88A25FBB19D8E01A00924534 /* JSQMessagesViewController.m in Sources */,
 				8885734D19DE55D000E89D20 /* NSUserDefaults+DemoSettings.m in Sources */,
+				72914F4F1B5014D700F52156 /* DemoDualButtonMesssage.m in Sources */,
 				883C11781A09FB100092A16D /* JSQMessagesCellTextView.m in Sources */,
 				88A25FB919D8E01A00924534 /* UIView+JSQMessages.m in Sources */,
 				88A25FCA19D8E01A00924534 /* JSQMessagesCollectionView.m in Sources */,
@@ -1060,6 +1098,7 @@
 				72914F491B4FF87500F52156 /* DemoButtonMessage.m in Sources */,
 				88A25FB819D8E01A00924534 /* UIImage+JSQMessages.m in Sources */,
 				88A25FBF19D8E01A00924534 /* JSQMessagesTimestampFormatter.m in Sources */,
+				72914F571B50267500F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.m in Sources */,
 				722CB9831B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.m in Sources */,
 				88A25FE019D8E0C400924534 /* DemoModelData.m in Sources */,
 				88A25F3C19D8DF2500924534 /* main.m in Sources */,
@@ -1074,6 +1113,7 @@
 				88A25FDF19D8E0C400924534 /* DemoMessagesViewController.m in Sources */,
 				88A25FB719D8E01A00924534 /* UIColor+JSQMessages.m in Sources */,
 				886C33FD19F4371E006B4997 /* JSQVideoMediaItem.m in Sources */,
+				72914F581B50267500F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.m in Sources */,
 				88A25FBA19D8E01A00924534 /* JSQMessagesKeyboardController.m in Sources */,
 				88A25FC019D8E01A00924534 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				88A25FC219D8E01A00924534 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,

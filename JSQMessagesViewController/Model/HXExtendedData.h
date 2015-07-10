@@ -22,7 +22,8 @@ typedef NS_ENUM(NSInteger, HXExtendedDataMessageType) {
     HXExtendedDataMessageTypeAttributedText,
     HXExtendedDataMessageTypeAttributedTextHeaderImage,
     HXExtendedDataMessageTypeAttributedTextSingleButton,
-    HXExtendedDataMessageTypeAttributedTextDualButton
+    HXExtendedDataMessageTypeAttributedTextDualButton,
+    HXExtendedDataMessageTypeAttributedTextHeaderImageDualButton
 };
 
 

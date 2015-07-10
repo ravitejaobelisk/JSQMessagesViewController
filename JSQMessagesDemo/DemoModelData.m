@@ -20,6 +20,7 @@
 
 #import "NSUserDefaults+DemoSettings.h"
 #import "DemoButtonMessage.h"
+#import "DemoDualButtonMesssage.h"
 
 
 /**
@@ -205,7 +206,16 @@
     attributedMessage.attributedText = attributedStringPneu;
     [self.messages addObject:attributedMessage];
     
+    HXExtendedMessage* imageHeaderDualButtonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                               senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                            date:[NSDate date]
+                                                                                            type:HXExtendedDataMessageTypeAttributedTextHeaderImageDualButton];
     
+    imageHeaderDualButtonMessage.attributedText = attributedStringPneu;
+    imageHeaderDualButtonMessage.image = [UIImage imageNamed:@"1"];
+    imageHeaderDualButtonMessage.titleForLeftButton = @"Left Button";
+    imageHeaderDualButtonMessage.titleForRightButton = @"Right Button";
+    [self.messages addObject:imageHeaderDualButtonMessage];
     
     HXExtendedMessage* imageHeaderMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
                                                       senderDisplayName:kJSQDemoAvatarDisplayNameCook
@@ -344,7 +354,7 @@
     buttonMessageIncoming.titleForButton = @"Click Me";
     [self.messages addObject:buttonMessageIncoming];
     
-    HXExtendedMessage* dualButtonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+    DemoDualButtonMesssage* dualButtonMessage = [[DemoDualButtonMesssage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
                                                                 senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                                              date:[NSDate date]
                                                                              type:HXExtendedDataMessageTypeAttributedTextDualButton];
@@ -354,7 +364,7 @@
     
     [self.messages addObject:dualButtonMessage];
     
-    HXExtendedMessage* dualButtonMessageIncoming = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+    DemoDualButtonMesssage* dualButtonMessageIncoming = [[DemoDualButtonMesssage alloc]initWithSenderId:kJSQDemoAvatarIdCook
                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                                                  date:[NSDate date]
                                                                                  type:HXExtendedDataMessageTypeAttributedTextDualButton];

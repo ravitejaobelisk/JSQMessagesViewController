@@ -89,8 +89,8 @@
             switch ([extendedMessageItem messageType]) {
                     
                 case HXExtendedDataMessageTypeAttributedTextHeaderImage:
-                    accessoriesHeight = 170;
-                    accessoriesWidth = 170;
+                    accessoriesHeight = 120;
+                    accessoriesWidth = 120;
                     break;
                 
                 case HXExtendedDataMessageTypeAttributedTextDualButton:
@@ -103,6 +103,16 @@
                     accessoriesWidth = buttonRect.size.width;
                     
                     break;
+                }
+                    
+                case HXExtendedDataMessageTypeAttributedTextHeaderImageDualButton: {
+                    accessoriesHeight = 120 + 44;
+                    CGRect buttonRect = [[extendedMessageItem titleForButton] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                                           options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                                        attributes:@{ NSFontAttributeName : self.messageBubbleFont }
+                                                                                           context:nil];
+
+                    accessoriesWidth = MAX(170,buttonRect.size.width);
                 }
                     
                 default: break;

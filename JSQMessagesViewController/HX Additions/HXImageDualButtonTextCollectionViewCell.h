@@ -8,8 +8,11 @@
 
 #import "JSQMessagesCollectionViewCell.h"
 #import "UIRoundedCornersView.h"
+#import "HXDualButtonTextCollectionViewCell.h"
 
-@interface HXImageTextCollectionViewCell : JSQMessagesCollectionViewCell
+@protocol HXCollectionViewCellDelegate;
+
+@interface HXImageDualButtonTextCollectionViewCell : HXDualButtonTextCollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIRoundedCornersView*headerImageViewContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
