@@ -7,8 +7,7 @@
 //
 
 #import "JSQMessagesViewController.h"
-
-@protocol HXCollectionViewCellDelegate;
+#import "HXCollectionViewCellDelegate.h"
 
 @interface HXMessagesViewController : JSQMessagesViewController <HXCollectionViewCellDelegate>
 
