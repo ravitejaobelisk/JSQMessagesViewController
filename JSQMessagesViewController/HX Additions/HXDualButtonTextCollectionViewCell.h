@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *buttonViewContainer;
 
+// Default is [UIColor lightGrayColor];
+@property (strong, nonatomic) UIColor* buttonViewContainerSeparatorColor;
+
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
 
