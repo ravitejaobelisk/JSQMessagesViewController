@@ -40,4 +40,6 @@ typedef NS_ENUM(NSInteger, HXExtendedDataMessageType) {
 - (NSString*) titleForLeftButton;
 - (NSString*) titleForRightButton;
 
+- (float) progress;
+
 @end

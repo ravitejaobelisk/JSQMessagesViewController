@@ -7,7 +7,6 @@
 //
 
 #import "HXImageDualButtonTextCollectionViewCell.h"
-#import "JSQMessagesCollectionViewLayoutAttributes.h"
 
 
 @implementation HXImageDualButtonTextCollectionViewCell

@@ -47,6 +47,7 @@
 		729F2FA61B44990C00FB2324 /* HXButtonTextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F2FA51B44990C00FB2324 /* HXButtonTextCollectionViewCell.m */; };
 		729F2FA91B44993F00FB2324 /* HXButtonTextCollectionViewCellIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F2FA81B44993F00FB2324 /* HXButtonTextCollectionViewCellIncoming.m */; };
 		729F2FAC1B44995A00FB2324 /* HXButtonTextCollectionViewCellOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F2FAB1B44995A00FB2324 /* HXButtonTextCollectionViewCellOutgoing.m */; };
+		72D2A8CB1B56C53C00BF8F68 /* HXPhotoMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D2A8CA1B56C53C00BF8F68 /* HXPhotoMediaItem.m */; };
 		77CC17A895E6E12BC9CB549A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6750B77E8A7042BA0754B /* libPods.a */; };
 		88078A9D19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */; };
 		88324C3419F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88324C3319F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m */; };
@@ -221,6 +222,8 @@
 		729F2FA81B44993F00FB2324 /* HXButtonTextCollectionViewCellIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXButtonTextCollectionViewCellIncoming.m; sourceTree = "<group>"; };
 		729F2FAA1B44995A00FB2324 /* HXButtonTextCollectionViewCellOutgoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXButtonTextCollectionViewCellOutgoing.h; sourceTree = "<group>"; };
 		729F2FAB1B44995A00FB2324 /* HXButtonTextCollectionViewCellOutgoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXButtonTextCollectionViewCellOutgoing.m; sourceTree = "<group>"; };
+		72D2A8C91B56C53C00BF8F68 /* HXPhotoMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoMediaItem.h; sourceTree = "<group>"; };
+		72D2A8CA1B56C53C00BF8F68 /* HXPhotoMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoMediaItem.m; sourceTree = "<group>"; };
 		782026E9E518622532ED474D /* libPods-JSQMessagesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQMessagesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88078A9B19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaPlaceholderView.h; sourceTree = "<group>"; };
 		88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaPlaceholderView.m; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 		72329D9B1B433B830027945E /* HX Additions */ = {
 			isa = PBXGroup;
 			children = (
+				72D2A8C91B56C53C00BF8F68 /* HXPhotoMediaItem.h */,
+				72D2A8CA1B56C53C00BF8F68 /* HXPhotoMediaItem.m */,
 				7218D3F61B43651600738171 /* HXAdditions.h */,
 				7295C66B1B4EFE9700AA2C0E /* Test Classes and Images */,
 				7218D3FA1B43676700738171 /* Controllers */,
@@ -1066,6 +1071,7 @@
 			files = (
 				88078A9D19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				88A25FCE19D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
+				72D2A8CB1B56C53C00BF8F68 /* HXPhotoMediaItem.m in Sources */,
 				88A25FD119D8E01A00924534 /* JSQMessagesInputToolbar.m in Sources */,
 				729F2F961B44745700FB2324 /* HXCollectionViewFlowLayout.m in Sources */,
 				88A25FCB19D8E01A00924534 /* JSQMessagesCollectionViewCell.m in Sources */,

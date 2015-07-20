@@ -21,6 +21,7 @@
 #import "NSUserDefaults+DemoSettings.h"
 #import "DemoButtonMessage.h"
 #import "DemoDualButtonMesssage.h"
+#import "HXPhotoMediaItem.h"
 
 
 /**
@@ -373,6 +374,14 @@
     dualButtonMessageIncoming.titleForRightButton = @"Right Title";
     
     [self.messages addObject:dualButtonMessageIncoming];
+    
+    HXPhotoMediaItem *photoItem = [[HXPhotoMediaItem alloc] init];
+    photoItem.placeHolderImage = [UIImage imageNamed:@"goldengate"];
+    photoItem.loading = YES;
+    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
+                                                   displayName:kJSQDemoAvatarDisplayNameSquires
+                                                         media:photoItem];
+    [self.messages addObject:photoMessage];
     
     
     

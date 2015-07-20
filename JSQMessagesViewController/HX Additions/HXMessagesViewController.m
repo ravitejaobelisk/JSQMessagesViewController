@@ -47,7 +47,6 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    
     [self registerHXImageTextCell];
     [self registerHXButtonTextCell];
     [self registerDualHXButtonTextCell];
