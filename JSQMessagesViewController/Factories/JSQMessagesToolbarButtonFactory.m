@@ -28,12 +28,14 @@
 + (UIButton *)defaultAccessoryButtonItem
 {
     UIImage *accessoryImage = [UIImage jsq_defaultAccessoryImage];
-    UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
-    UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor darkGrayColor]];
+    UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor jsq_messageBubbleBlueColor]];
+    UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[[UIColor jsq_messageBubbleBlueColor] jsq_colorByDarkeningColorWithValue:0.1f]];
+    UIImage *disabledImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
 
     UIButton *accessoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, accessoryImage.size.width, 32.0f)];
     [accessoryButton setImage:normalImage forState:UIControlStateNormal];
     [accessoryButton setImage:highlightedImage forState:UIControlStateHighlighted];
+    [accessoryButton setImage:disabledImage forState:UIControlStateDisabled];
 
     accessoryButton.contentMode = UIViewContentModeScaleAspectFit;
     accessoryButton.backgroundColor = [UIColor clearColor];

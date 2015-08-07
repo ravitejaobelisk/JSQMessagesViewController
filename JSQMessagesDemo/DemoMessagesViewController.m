@@ -39,6 +39,8 @@
     
     self.title = @"JSQMessages";
     
+    //self.inputToolbar.contentView.leftBarButtonItem.enabled = NO;
+    
     /**
      *  You MUST set your senderId and display name
      */
