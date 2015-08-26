@@ -45,18 +45,22 @@
     JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
     
     //Top Button Container hair line
-    CALayer* tophairLine = [CALayer layer];
-    tophairLine.frame = CGRectMake(0, 0, customAttributes.messageBubbleContainerViewWidth, 0.5);
-    tophairLine.backgroundColor = self.buttonViewContainerSeparatorColor.CGColor;
-    [self.buttonViewContainer.layer addSublayer:tophairLine];
-    self.tophairLine = tophairLine;
+    if (!self.tophairLine) {
+        CALayer* tophairLine = [CALayer layer];
+        tophairLine.frame = CGRectMake(0, 0, customAttributes.messageBubbleContainerViewWidth, 0.5);
+        tophairLine.backgroundColor = self.buttonViewContainerSeparatorColor.CGColor;
+        [self.buttonViewContainer.layer addSublayer:tophairLine];
+        self.tophairLine = tophairLine;
+    }
     
     //Top Button Container hair line
-    CALayer* middlehairLine = [CALayer layer];
-    middlehairLine.frame = CGRectMake(customAttributes.messageBubbleContainerViewWidth / 2, 0, 0.5, self.buttonViewContainer.bounds.size.height);
-    middlehairLine.backgroundColor = self.buttonViewContainerSeparatorColor.CGColor;
-    [self.buttonViewContainer.layer addSublayer:middlehairLine];
-    self.middlehairLine = middlehairLine;
+    if (!self.middlehairLine) {
+        CALayer* middlehairLine = [CALayer layer];
+        middlehairLine.frame = CGRectMake(customAttributes.messageBubbleContainerViewWidth / 2, 0, 0.5, self.buttonViewContainer.bounds.size.height);
+        middlehairLine.backgroundColor = self.buttonViewContainerSeparatorColor.CGColor;
+        [self.buttonViewContainer.layer addSublayer:middlehairLine];
+        self.middlehairLine = middlehairLine;
+    }
 }
 
 - (void) didTouchLeftButton:(UIButton*) sender {
