@@ -31,4 +31,6 @@
 #import "HXImageDualButtonTextCollectionViewCellOutgoing.h"
 #import "HXImageDualButtonTextCollectionViewCellIncoming.h"
 
+#import "HXSystemCollectionViewCell.h"
+
 #endif

@@ -383,6 +383,13 @@
                                                          media:photoItem];
     [self.messages addObject:photoMessage];
     
+    HXExtendedMessage* systemMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
+                                                                senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                             date:[NSDate date]
+                                                                             type:HXExtendedDataMessageTypeSystem];
+    
+    systemMessage.attributedText = [[NSAttributedString alloc]initWithString:@"This message has been recevied from the system"];;
+    [self.messages addObject:systemMessage];
     
     
     //[self addPhotoMediaMessage];
@@ -396,7 +403,6 @@
             [self.messages addObjectsFromArray:copyOfMessages];
         }
     }
-    
     
     /**
      *  Setting to load REALLY long message for testing/demo

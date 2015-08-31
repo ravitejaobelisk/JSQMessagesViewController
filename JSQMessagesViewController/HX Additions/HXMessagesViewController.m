@@ -27,6 +27,8 @@
 @property (copy, nonatomic) NSString *outgoingImageDualButtonTextCellIdentifier;
 @property (copy, nonatomic) NSString *incomingImageDualButtonTextCellIdentifier;
 
+@property (copy, nonatomic) NSString *systemCellIdentifier;
+
 @end
 
 
@@ -51,6 +53,13 @@
     [self registerHXButtonTextCell];
     [self registerDualHXButtonTextCell];
     [self registerImageDualHXButtonTextCell];
+    [self registerSystemCell];
+}
+
+- (void) registerSystemCell {
+    self.systemCellIdentifier = [HXSystemCollectionViewCell cellReuseIdentifier];
+    [self.collectionView registerNib:[HXSystemCollectionViewCell nib]
+          forCellWithReuseIdentifier:self.systemCellIdentifier];
 }
 
 
@@ -118,6 +127,13 @@
         JSQMessagesCollectionViewCell *cell;
         
         switch ([extendedMessageItem messageType]) {
+                
+            case HXExtendedDataMessageTypeSystem: {
+                cellIdentifier = self.systemCellIdentifier;
+                cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+                cell.textView.attributedText = [extendedMessageItem attributedText];
+                break;
+            }
                 
             case HXExtendedDataMessageTypeAttributedText: {
                 cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;

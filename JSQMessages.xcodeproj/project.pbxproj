@@ -20,6 +20,8 @@
 		722CB9831B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = 722CB97E1B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.m */; };
 		722CB9841B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722CB97F1B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.xib */; };
 		72329D9E1B433C510027945E /* HXImageTextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72329D9D1B433C510027945E /* HXImageTextCollectionViewCell.m */; };
+		7235CC3B1B94E31C00125199 /* HXSystemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7235CC3A1B94E31C00125199 /* HXSystemCollectionViewCell.xib */; };
+		7235CC3E1B94E35800125199 /* HXSystemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7235CC3D1B94E35800125199 /* HXSystemCollectionViewCell.m */; };
 		72890B021B41E7A90065EC7E /* HXExtendedMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72890B011B41E7A90065EC7E /* HXExtendedMessage.m */; };
 		72914F491B4FF87500F52156 /* DemoButtonMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F481B4FF87500F52156 /* DemoButtonMessage.m */; };
 		72914F4C1B50057B00F52156 /* HXCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 72914F4B1B50057B00F52156 /* HXCollectionViewLayoutAttributes.m */; };
@@ -183,6 +185,9 @@
 		722CB97F1B47151A00CAD94D /* HXDualButtonTextCollectionViewCellOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXDualButtonTextCollectionViewCellOutgoing.xib; sourceTree = "<group>"; };
 		72329D9C1B433C510027945E /* HXImageTextCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXImageTextCollectionViewCell.h; sourceTree = "<group>"; };
 		72329D9D1B433C510027945E /* HXImageTextCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXImageTextCollectionViewCell.m; sourceTree = "<group>"; };
+		7235CC3A1B94E31C00125199 /* HXSystemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXSystemCollectionViewCell.xib; sourceTree = "<group>"; };
+		7235CC3C1B94E35800125199 /* HXSystemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSystemCollectionViewCell.h; sourceTree = "<group>"; };
+		7235CC3D1B94E35800125199 /* HXSystemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSystemCollectionViewCell.m; sourceTree = "<group>"; };
 		72890B001B41E7A90065EC7E /* HXExtendedMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXExtendedMessage.h; path = ../Model/HXExtendedMessage.h; sourceTree = "<group>"; };
 		72890B011B41E7A90065EC7E /* HXExtendedMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXExtendedMessage.m; path = ../Model/HXExtendedMessage.m; sourceTree = "<group>"; };
 		72890B031B41E7F20065EC7E /* HXExtendedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HXExtendedData.h; path = ../Model/HXExtendedData.h; sourceTree = "<group>"; };
@@ -437,6 +442,7 @@
 			children = (
 				7216AEC61B4826A300BE8F6E /* UIRoundedCornersView.h */,
 				7216AEC71B4826A300BE8F6E /* UIRoundedCornersView.m */,
+				7235CC351B94E25B00125199 /* HXSystemCollectionViewCells */,
 				72914F501B5024BF00F52156 /* HXImageDualButtonTextCollectionViewCells */,
 				722CB9771B4714A100CAD94D /* HXDualButtonTextCollectionViewCells */,
 				729F2FAD1B44996F00FB2324 /* HXSingleButtonTextCollectionViewCells */,
@@ -495,6 +501,16 @@
 			path = "HX Additions";
 			sourceTree = "<group>";
 		};
+		7235CC351B94E25B00125199 /* HXSystemCollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				7235CC3C1B94E35800125199 /* HXSystemCollectionViewCell.h */,
+				7235CC3D1B94E35800125199 /* HXSystemCollectionViewCell.m */,
+				7235CC3A1B94E31C00125199 /* HXSystemCollectionViewCell.xib */,
+			);
+			name = HXSystemCollectionViewCells;
+			sourceTree = "<group>";
+		};
 		72914F501B5024BF00F52156 /* HXImageDualButtonTextCollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,9 +563,9 @@
 		729F2FAD1B44996F00FB2324 /* HXSingleButtonTextCollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				729F2FA11B44970900FB2324 /* HXButtonTextCollectionViewCellIncoming.xib */,
 				729F2FA41B44990C00FB2324 /* HXButtonTextCollectionViewCell.h */,
 				729F2FA51B44990C00FB2324 /* HXButtonTextCollectionViewCell.m */,
-				729F2FA11B44970900FB2324 /* HXButtonTextCollectionViewCellIncoming.xib */,
 				729F2FA71B44993F00FB2324 /* HXButtonTextCollectionViewCellIncoming.h */,
 				729F2FA81B44993F00FB2324 /* HXButtonTextCollectionViewCellIncoming.m */,
 				729F2FA01B44970900FB2324 /* HXButtonTextCollectionViewCellOutgoing.xib */,
@@ -984,6 +1000,7 @@
 				72914F5C1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib in Resources */,
 				722CB9741B46F99700CAD94D /* cremeDentalQuadrado.png in Resources */,
 				72914F5D1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellOutgoing.xib in Resources */,
+				7235CC3B1B94E31C00125199 /* HXSystemCollectionViewCell.xib in Resources */,
 				729F2F9E1B44965700FB2324 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				7295C6791B4EFEA800AA2C0E /* 5.png in Resources */,
 				7295C67D1B4EFEA800AA2C0E /* 1.png in Resources */,
@@ -1100,6 +1117,7 @@
 				88A25FD719D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				88A25FD319D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				88A25FC819D8E01A00924534 /* JSQPhotoMediaItem.m in Sources */,
+				7235CC3E1B94E35800125199 /* HXSystemCollectionViewCell.m in Sources */,
 				88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				72914F491B4FF87500F52156 /* DemoButtonMessage.m in Sources */,
 				88A25FB819D8E01A00924534 /* UIImage+JSQMessages.m in Sources */,

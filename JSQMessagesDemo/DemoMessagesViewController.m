@@ -245,8 +245,7 @@
     return [self.demoData.messages objectAtIndex:indexPath.item];
 }
 
-- (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath {
     /**
      *  You may return nil here if you do not want bubbles.
      *  In this case, you should set the background color of your collection view cell's textView.
@@ -256,13 +255,20 @@
     
     JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
     
-    if ([message.senderId isEqualToString:self.senderId]) {
-        return self.demoData.outgoingBubbleImageData;
+    if ([message conformsToProtocol:@protocol(HXExtendedData)]) {
+        id<HXExtendedData> extendedMessage = (id<HXExtendedData>) message;
+        
+        if ([extendedMessage messageType] == HXExtendedDataMessageTypeSystem) {
+            return nil;
+        }
     }
     
-    return self.demoData.incomingBubbleImageData;
-    
-    return nil;
+   if ([message.senderId isEqualToString:self.senderId]) {
+        return self.demoData.outgoingBubbleImageData;
+        
+    } else {
+        return self.demoData.incomingBubbleImageData;
+    }
 }
 
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -379,17 +385,24 @@
     
     JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
     
+    
     if (!msg.isMediaMessage) {
         
         if ([msg.senderId isEqualToString:self.senderId]) {
             cell.textView.textColor = [UIColor blackColor];
-        }
-        else {
+        
+        } else {
             cell.textView.textColor = [UIColor whiteColor];
         }
         
-        cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
-                                              NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
+        if ([msg conformsToProtocol:@protocol(HXExtendedData)]) {
+            id<HXExtendedData> extendedMessage = (id<HXExtendedData>) msg;
+            
+            if ([extendedMessage messageType] == HXExtendedDataMessageTypeSystem) {
+                cell.textView.backgroundColor = [UIColor grayColor];
+                cell.textView.textColor = [UIColor whiteColor];
+            }
+        }
     }
     
     cell.textView.dataDetectorTypes = UIDataDetectorTypeNone;
