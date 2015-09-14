@@ -15,6 +15,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self.button addTarget:self action:@selector(didTouchButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.button.titleLabel.adjustsFontSizeToFitWidth = true;
+    self.button.titleLabel.minimumScaleFactor = 0.7;
 }
 
 - (void)dealloc {

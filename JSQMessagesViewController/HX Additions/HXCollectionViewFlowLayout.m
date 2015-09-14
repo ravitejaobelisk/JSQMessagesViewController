@@ -110,8 +110,12 @@
                                                                                            options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                                                                         attributes:@{ NSFontAttributeName : self.messageBubbleFont }
                                                                                            context:nil];
-                    accessoriesWidth = leftButtonRect.size.width;
-                    accessoriesWidth = leftButtonRect.size.width * 2;
+                    
+                    CGRect rightButtonRect = [[extendedMessageItem titleForRightButton] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                                                   options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                                                attributes:@{ NSFontAttributeName : self.messageBubbleFont }
+                                                                                                   context:nil];
+                    accessoriesWidth = MAX(leftButtonRect.size.width,rightButtonRect.size.width) * 2;
                     
                     break;
                 }
@@ -119,11 +123,15 @@
                 case HXExtendedDataMessageTypeAttributedTextHeaderImageDualButton: {
                     accessoriesHeight = 120 + 44;
                     CGRect leftButtonRect = [[extendedMessageItem titleForLeftButton] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
-                                                                                           options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                                                        attributes:@{ NSFontAttributeName : self.messageBubbleFont }
-                                                                                           context:nil];
-
-                    accessoriesWidth = leftButtonRect.size.width * 2;
+                                                                                                   options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                                                attributes:@{ NSFontAttributeName : self.messageBubbleFont }
+                                                                                                   context:nil];
+                    
+                    CGRect rightButtonRect = [[extendedMessageItem titleForRightButton] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                                                     options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                                                  attributes:@{ NSFontAttributeName : self.messageBubbleFont }
+                                                                                                     context:nil];
+                    accessoriesWidth = MAX(leftButtonRect.size.width,rightButtonRect.size.width) * 2;
                 }
                     
                 default: break;
@@ -146,7 +154,7 @@
         CGFloat verticalInsets = verticalContainerInsets + verticalFrameInsets + 2.0f;
         
         //  same as above, an extra 2 points of magix
-        CGFloat bubleContentWidth = MAX(stringSize.width, accessoriesWidth);
+        CGFloat bubleContentWidth = MIN(MAX(stringSize.width, accessoriesWidth),self.itemWidth);
         CGFloat finalWidth = MAX(bubleContentWidth + horizontalInsetsTotal, self.bubbleImageAssetWidth) + 2.0f;
         
         finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets + accessoriesHeight);

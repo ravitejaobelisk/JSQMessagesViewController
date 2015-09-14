@@ -169,6 +169,37 @@
                                               attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
                                                            NSForegroundColorAttributeName:[UIColor grayColor]}]];
     
+    /**
+        Testing: Attributed Strings
+    */
+    NSMutableAttributedString* attributedStringShort = [NSMutableAttributedString new];
+    
+    [attributedStringShort appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"FGM"
+                                                    attributes:@{NSParagraphStyleAttributeName:style,
+                                                                 NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline],
+                                                                 NSForegroundColorAttributeName:[UIColor whiteColor]}]];
+    
+    
+    
+    [attributedStringShort appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"Condac 37%."
+                                                    attributes:@{NSParagraphStyleAttributeName:style,
+                                                                 NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline],
+                                                                 NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
+    [attributedStringShort appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@"\nR$71,89"
+                                                    attributes:@{NSParagraphStyleAttributeName:style,
+                                                                 NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1],
+                                                                 NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                 NSStrikethroughStyleAttributeName:@1}]];
+    
+    [attributedStringShort appendAttributedString:[[NSAttributedString alloc]
+                                                    initWithString:@" R$67,90"
+                                                    attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+                                                                 NSForegroundColorAttributeName:[UIColor grayColor]}]];
+    
     
     NSMutableAttributedString* attributedStringPneu = [NSMutableAttributedString new];
     
@@ -352,16 +383,16 @@
                                                                              date:[NSDate date]
                                                                              type:HXExtendedDataMessageTypeAttributedTextSingleButton];
     buttonMessageIncoming.attributedText = attributedStringCremer;
-    buttonMessageIncoming.titleForButton = @"Click Me";
+    buttonMessageIncoming.titleForButton = @"Click Me 123456789012345 12312312312312";
     [self.messages addObject:buttonMessageIncoming];
     
     DemoDualButtonMesssage* dualButtonMessage = [[DemoDualButtonMesssage alloc]initWithSenderId:kJSQDemoAvatarIdSquires
                                                                 senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                                              date:[NSDate date]
                                                                              type:HXExtendedDataMessageTypeAttributedTextDualButton];
-    dualButtonMessage.attributedText = attributedStringCremer;
-    dualButtonMessage.titleForLeftButton = @"Left Title";
-    dualButtonMessage.titleForRightButton = @"Right Title";
+    dualButtonMessage.attributedText = attributedStringShort;
+    dualButtonMessage.titleForLeftButton = @"Left Long Long Title";
+    dualButtonMessage.titleForRightButton = @"Right Long Long Title";
     
     [self.messages addObject:dualButtonMessage];
     
@@ -370,10 +401,20 @@
                                                                                  date:[NSDate date]
                                                                                  type:HXExtendedDataMessageTypeAttributedTextDualButton];
     dualButtonMessageIncoming.attributedText = attributedStringCremer;
-    dualButtonMessageIncoming.titleForLeftButton = @"Left Title";
-    dualButtonMessageIncoming.titleForRightButton = @"Right Title";
+    dualButtonMessageIncoming.titleForLeftButton = @"Left";
+    dualButtonMessageIncoming.titleForRightButton = @"Right Long Title";
     
-    [self.messages addObject:dualButtonMessageIncoming];
+    //[self.messages addObject:dualButtonMessageIncoming];
+    
+    DemoDualButtonMesssage* dualButtonShortMessageIncoming = [[DemoDualButtonMesssage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                                      senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+                                                                                                   date:[NSDate date]
+                                                                                                   type:HXExtendedDataMessageTypeAttributedTextDualButton];
+    dualButtonShortMessageIncoming.attributedText = attributedStringShort;
+    dualButtonShortMessageIncoming.titleForLeftButton = @"Left";
+    dualButtonShortMessageIncoming.titleForRightButton = @"Right Long Long Long Long Long Title";
+    
+    [self.messages addObject:dualButtonShortMessageIncoming];
     
     HXPhotoMediaItem *photoItem = [[HXPhotoMediaItem alloc] init];
     photoItem.placeHolderImage = [UIImage imageNamed:@"goldengate"];

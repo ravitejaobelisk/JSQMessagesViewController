@@ -23,6 +23,11 @@
     [self.leftButton addTarget:self action:@selector(didTouchLeftButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.rightButton addTarget:self action:@selector(didTouchRightButton:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonViewContainerSeparatorColor = [UIColor lightGrayColor];
+    
+    self.leftButton.titleLabel.adjustsFontSizeToFitWidth = true;
+    self.leftButton.titleLabel.minimumScaleFactor = 0.7;
+    self.rightButton.titleLabel.adjustsFontSizeToFitWidth = true;
+    self.rightButton.titleLabel.minimumScaleFactor = 0.7;
 }
 
 - (void) dealloc {
