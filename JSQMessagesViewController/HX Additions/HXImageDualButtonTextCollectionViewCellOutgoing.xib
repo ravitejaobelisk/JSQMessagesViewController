@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -46,24 +45,22 @@
                                 <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaM-6Z-Qdb" userLabel="Header Image Container View" customClass="UIRoundedCornersView">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="119"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wle-DU-T9Q" userLabel="Header Image">
-                                        <rect key="frame" x="69" y="10" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="238" height="119"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Wle-DU-T9Q" secondAttribute="height" multiplier="1:1" id="2Bp-oi-8p8"/>
-                                            <constraint firstAttribute="height" constant="100" id="CTQ-v9-dMq"/>
-                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Wle-DU-T9Q" firstAttribute="top" secondItem="aaM-6Z-Qdb" secondAttribute="top" constant="10" id="6HY-bQ-S5r"/>
-                                    <constraint firstAttribute="centerX" secondItem="Wle-DU-T9Q" secondAttribute="centerX" id="O7A-GF-Cds"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wle-DU-T9Q" secondAttribute="bottom" constant="10" id="X6d-1z-Vp2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wle-DU-T9Q" secondAttribute="trailing" id="0wc-cg-goG"/>
+                                    <constraint firstItem="Wle-DU-T9Q" firstAttribute="leading" secondItem="aaM-6Z-Qdb" secondAttribute="leading" id="88F-OU-xRc"/>
+                                    <constraint firstItem="Wle-DU-T9Q" firstAttribute="top" secondItem="aaM-6Z-Qdb" secondAttribute="top" id="ktg-0l-Q11"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wle-DU-T9Q" secondAttribute="bottom" id="xY6-QE-yhY"/>
+                                    <constraint firstAttribute="height" constant="119" id="yGb-It-bG7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
@@ -73,7 +70,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-aM-0Dr" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="120" width="238" height="135"/>
+                                <rect key="frame" x="0.0" y="119" width="238" height="136"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

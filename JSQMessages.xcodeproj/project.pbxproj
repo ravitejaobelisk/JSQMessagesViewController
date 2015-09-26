@@ -55,6 +55,7 @@
 		72F4A9B21BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4A9AC1BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellIncoming.xib */; settings = {ASSET_TAGS = (); }; };
 		72F4A9B31BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4A9AE1BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.m */; settings = {ASSET_TAGS = (); }; };
 		72F4A9B41BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4A9AF1BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.xib */; settings = {ASSET_TAGS = (); }; };
+		72F4A9B61BB6F81700146E0A /* oculos.png in Resources */ = {isa = PBXBuildFile; fileRef = 72F4A9B51BB6F81700146E0A /* oculos.png */; settings = {ASSET_TAGS = (); }; };
 		77CC17A895E6E12BC9CB549A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6750B77E8A7042BA0754B /* libPods.a */; };
 		88078A9D19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */; };
 		88324C3419F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88324C3319F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m */; };
@@ -242,6 +243,7 @@
 		72F4A9AD1BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXImageSingleButtonTextCollectionViewCellOutgoing.h; sourceTree = "<group>"; };
 		72F4A9AE1BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXImageSingleButtonTextCollectionViewCellOutgoing.m; sourceTree = "<group>"; };
 		72F4A9AF1BB6E67600146E0A /* HXImageSingleButtonTextCollectionViewCellOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXImageSingleButtonTextCollectionViewCellOutgoing.xib; sourceTree = "<group>"; };
+		72F4A9B51BB6F81700146E0A /* oculos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oculos.png; sourceTree = "<group>"; };
 		782026E9E518622532ED474D /* libPods-JSQMessagesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQMessagesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88078A9B19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaPlaceholderView.h; sourceTree = "<group>"; };
 		88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaPlaceholderView.m; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				72914F4E1B5014D700F52156 /* DemoDualButtonMesssage.m */,
 				72914F471B4FF87500F52156 /* DemoButtonMessage.h */,
 				72914F481B4FF87500F52156 /* DemoButtonMessage.m */,
+				72F4A9B51BB6F81700146E0A /* oculos.png */,
 				7295C66C1B4EFEA800AA2C0E /* 9.png */,
 				7295C66D1B4EFEA800AA2C0E /* 8.png */,
 				7295C66E1B4EFEA800AA2C0E /* 7.png */,
@@ -1025,6 +1028,7 @@
 				729F2FA21B44970900FB2324 /* HXButtonTextCollectionViewCellOutgoing.xib in Resources */,
 				7295C67C1B4EFEA800AA2C0E /* 2.png in Resources */,
 				88A25F3919D8DF2500924534 /* Main.storyboard in Resources */,
+				72F4A9B61BB6F81700146E0A /* oculos.png in Resources */,
 				729F2F9F1B44965700FB2324 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				88A25FD419D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				72914F5C1B50279B00F52156 /* HXImageDualButtonTextCollectionViewCellIncoming.xib in Resources */,
@@ -1368,10 +1372,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1390,10 +1391,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = JSQMessagesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";

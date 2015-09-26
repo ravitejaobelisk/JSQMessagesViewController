@@ -448,7 +448,7 @@
                                                                                               type:HXExtendedDataMessageTypeAttributedTextHeaderImageSingleButton];
     
     imageHeaderSingleButtonMessage2.attributedText = attributedStringPneu;
-    imageHeaderSingleButtonMessage2.image = [UIImage imageNamed:@"1"];
+    imageHeaderSingleButtonMessage2.image = [UIImage imageNamed:@"oculos"];
     imageHeaderSingleButtonMessage2.titleForButton = @"Click Me";
     [self.messages addObject:imageHeaderSingleButtonMessage2];
     
