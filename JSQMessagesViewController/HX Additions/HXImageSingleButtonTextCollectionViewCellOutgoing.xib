@@ -3,13 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="23f-xH-rkY" customClass="HXImageDualButtonTextCollectionViewCellOutgoing">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="23f-xH-rkY" customClass="HXImageSingleButtonTextCollectionViewCellOutgoing">
             <rect key="frame" x="0.0" y="0.0" width="304" height="359"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -82,17 +81,10 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBq-SR-rs8" userLabel="Button Container View" customClass="UIRoundedCornersView">
                                 <rect key="frame" x="0.0" y="255" width="238" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJB-0N-gOt">
-                                        <rect key="frame" x="0.0" y="7" width="119" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="Left Button">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuH-1H-Bv0">
-                                        <rect key="frame" x="119" y="7" width="119" height="30"/>
+                                        <rect key="frame" x="0.0" y="7" width="238" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="Right Button">
+                                        <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -100,13 +92,10 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="eJB-0N-gOt" secondAttribute="centerY" id="0Zj-xD-rmO"/>
                                     <constraint firstAttribute="trailing" secondItem="vuH-1H-Bv0" secondAttribute="trailing" id="A1b-vV-Yas"/>
-                                    <constraint firstItem="eJB-0N-gOt" firstAttribute="leading" secondItem="dBq-SR-rs8" secondAttribute="leading" id="GzZ-l1-IWA"/>
-                                    <constraint firstAttribute="centerX" secondItem="eJB-0N-gOt" secondAttribute="trailing" id="Ktw-hY-qZ3"/>
                                     <constraint firstAttribute="height" constant="44" id="SPg-mb-Voq"/>
                                     <constraint firstAttribute="centerY" secondItem="vuH-1H-Bv0" secondAttribute="centerY" id="VBo-ZE-cuX"/>
-                                    <constraint firstItem="vuH-1H-Bv0" firstAttribute="leading" secondItem="dBq-SR-rs8" secondAttribute="centerX" id="Vyl-17-OWG"/>
+                                    <constraint firstItem="vuH-1H-Bv0" firstAttribute="leading" secondItem="dBq-SR-rs8" secondAttribute="leading" id="Vyl-17-OWG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="NO"/>
@@ -191,6 +180,7 @@
                 <outlet property="avatarContainerViewHeightConstraint" destination="tgw-aN-JJu" id="pgV-tY-5Cm"/>
                 <outlet property="avatarContainerViewWidthConstraint" destination="Pkm-tW-k4z" id="Cpe-d3-yiq"/>
                 <outlet property="avatarImageView" destination="y9b-D9-Q7W" id="cZo-SR-S9h"/>
+                <outlet property="button" destination="vuH-1H-Bv0" id="aut-cg-vrT"/>
                 <outlet property="buttonViewContainer" destination="dBq-SR-rs8" id="pjp-Em-c4H"/>
                 <outlet property="cellBottomLabel" destination="7Uc-dI-YDD" id="gVD-C2-UcZ"/>
                 <outlet property="cellBottomLabelHeightConstraint" destination="cPs-M4-tjX" id="b5k-6e-iA8"/>
@@ -198,13 +188,11 @@
                 <outlet property="cellTopLabelHeightConstraint" destination="9oK-E7-iXA" id="MZM-kV-2dI"/>
                 <outlet property="headerImageView" destination="Wle-DU-T9Q" id="G6S-mV-lTc"/>
                 <outlet property="headerImageViewContainer" destination="aaM-6Z-Qdb" id="miG-xE-obf"/>
-                <outlet property="leftButton" destination="eJB-0N-gOt" id="CA5-sW-4Px"/>
                 <outlet property="messageBubbleContainerView" destination="2zh-vR-QJW" id="pu0-GU-eZl"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="imD-52-K45" id="Xld-Pa-yJw"/>
                 <outlet property="messageBubbleImageView" destination="2qm-c6-OZf" id="bpy-Gv-jSh"/>
                 <outlet property="messageBubbleTopLabel" destination="p52-YN-yLu" id="SLH-sA-Chu"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="8TB-va-f8L" id="FNt-BS-Wxi"/>
-                <outlet property="rightButton" destination="vuH-1H-Bv0" id="Njb-YD-cZz"/>
                 <outlet property="textView" destination="vLY-aM-0Dr" id="YEp-mW-xIY"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="aVg-yy-8K7" id="CIe-Bi-eng"/>
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="gpq-oD-zNI" id="v3N-6L-H5u"/>

@@ -135,14 +135,14 @@
     
     self.messages = [NSMutableArray array];
     
-    /**
-     Testing: Attributed Strings
-     */
+//    /**
+//     Testing: Attributed Strings
+//     */
     NSMutableAttributedString* attributedStringCremer = [NSMutableAttributedString new];
-    
+//    
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     style.paragraphSpacingBefore = 6;
-    
+
     [attributedStringCremer appendAttributedString:[[NSAttributedString alloc]
                                               initWithString:@"Clareador Whiteness Perfect - FGM"
                                               attributes:@{NSParagraphStyleAttributeName:style,
@@ -228,7 +228,7 @@
                                                     initWithString:@"\nR$250,90"
                                                     attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],
                                                                  NSForegroundColorAttributeName:[UIColor grayColor]}]];
-    
+
     
     HXExtendedMessage* attributedMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
                                                                     senderDisplayName:kJSQDemoAvatarDisplayNameCook
@@ -431,6 +431,26 @@
     
     systemMessage.attributedText = [[NSAttributedString alloc]initWithString:@"This message has been recevied from the system"];;
     [self.messages addObject:systemMessage];
+    
+    HXExtendedMessage* imageHeaderSingleButtonMessage = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                               senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                            date:[NSDate date]
+                                                                                            type:HXExtendedDataMessageTypeAttributedTextSingleButton];
+    
+    imageHeaderSingleButtonMessage.attributedText = attributedStringPneu;
+    imageHeaderSingleButtonMessage.image = [UIImage imageNamed:@"1"];
+    imageHeaderSingleButtonMessage.titleForButton = @"Click Me";
+    [self.messages addObject:imageHeaderSingleButtonMessage];
+    
+    HXExtendedMessage* imageHeaderSingleButtonMessage2 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                                 senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                              date:[NSDate date]
+                                                                                              type:HXExtendedDataMessageTypeAttributedTextHeaderImageSingleButton];
+    
+    imageHeaderSingleButtonMessage2.attributedText = attributedStringPneu;
+    imageHeaderSingleButtonMessage2.image = [UIImage imageNamed:@"1"];
+    imageHeaderSingleButtonMessage2.titleForButton = @"Click Me";
+    [self.messages addObject:imageHeaderSingleButtonMessage2];
     
     
     //[self addPhotoMediaMessage];

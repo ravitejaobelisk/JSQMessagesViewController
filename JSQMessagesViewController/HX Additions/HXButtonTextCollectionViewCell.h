@@ -11,6 +11,9 @@
 
 @interface HXButtonTextCollectionViewCell : JSQMessagesCollectionViewCell
 
+// Default is [UIColor lightGrayColor];
+@property (strong, nonatomic) UIColor* buttonViewContainerSeparatorColor;
+
 @property (weak, nonatomic) IBOutlet UIView *buttonViewContainer;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) id<HXCollectionViewCellDelegate> extendedDelegate;

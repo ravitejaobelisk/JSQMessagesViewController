@@ -31,6 +31,10 @@
 #import "HXImageDualButtonTextCollectionViewCellOutgoing.h"
 #import "HXImageDualButtonTextCollectionViewCellIncoming.h"
 
+#import "HXImageSingleButtonTextCollectionViewCell.h"
+#import "HXImageSingleButtonTextCollectionViewCellOutgoing.h"
+#import "HXImageSingleButtonTextCollectionViewCellIncoming.h"
+
 #import "HXSystemCollectionViewCell.h"
 
 #endif

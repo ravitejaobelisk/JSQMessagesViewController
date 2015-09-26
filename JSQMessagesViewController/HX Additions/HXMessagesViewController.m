@@ -27,6 +27,9 @@
 @property (copy, nonatomic) NSString *outgoingImageDualButtonTextCellIdentifier;
 @property (copy, nonatomic) NSString *incomingImageDualButtonTextCellIdentifier;
 
+@property (copy, nonatomic) NSString *outgoingImageSingleButtonTextCellIdentifier;
+@property (copy, nonatomic) NSString *incomingImageSingleButtonTextCellIdentifier;
+
 @property (copy, nonatomic) NSString *systemCellIdentifier;
 
 @end
@@ -53,6 +56,7 @@
     [self registerHXButtonTextCell];
     [self registerDualHXButtonTextCell];
     [self registerImageDualHXButtonTextCell];
+    [self registerImageSingleHXButtonTextCell];
     [self registerSystemCell];
 }
 
@@ -107,6 +111,19 @@
     [self.collectionView registerNib:[HXImageDualButtonTextCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:self.incomingImageDualButtonTextCellIdentifier];
 }
+
+- (void) registerImageSingleHXButtonTextCell {
+    self.outgoingImageSingleButtonTextCellIdentifier = [HXImageSingleButtonTextCollectionViewCellOutgoing cellReuseIdentifier];
+    self.incomingImageSingleButtonTextCellIdentifier = [HXImageSingleButtonTextCollectionViewCellIncoming cellReuseIdentifier];
+    
+    [self.collectionView registerNib:[HXImageSingleButtonTextCollectionViewCellOutgoing nib]
+          forCellWithReuseIdentifier: self.outgoingImageSingleButtonTextCellIdentifier];
+    
+    [self.collectionView registerNib:[HXImageSingleButtonTextCollectionViewCellIncoming nib]
+          forCellWithReuseIdentifier:self.incomingImageSingleButtonTextCellIdentifier];
+}
+
+
 
 
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -180,6 +197,17 @@
                 extendedCell.textView.attributedText = [extendedMessageItem attributedText];
                 [extendedCell.leftButton setTitle:[extendedMessageItem titleForLeftButton] forState:UIControlStateNormal];
                 [extendedCell.rightButton setTitle:[extendedMessageItem titleForRightButton] forState:UIControlStateNormal];
+                extendedCell.extendedDelegate = self;
+                break;
+            }
+                
+            case HXExtendedDataMessageTypeAttributedTextHeaderImageSingleButton: {
+                cellIdentifier = isOutgoingMessage ? self.outgoingImageSingleButtonTextCellIdentifier : self.incomingImageSingleButtonTextCellIdentifier;
+                cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+                HXImageSingleButtonTextCollectionViewCell* extendedCell = (HXImageSingleButtonTextCollectionViewCell*) cell;
+                extendedCell.headerImageView.image = [extendedMessageItem image];
+                extendedCell.textView.attributedText = [extendedMessageItem attributedText];
+                [extendedCell.button setTitle:[extendedMessageItem titleForButton] forState:UIControlStateNormal];
                 extendedCell.extendedDelegate = self;
                 break;
             }

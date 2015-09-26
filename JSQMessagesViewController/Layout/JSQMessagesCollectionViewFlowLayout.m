@@ -577,36 +577,49 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     NSArray *behaviors = self.dynamicAnimator.behaviors;
     
     NSIndexSet *indexSet = [behaviors indexesOfObjectsPassingTest:^BOOL(UIAttachmentBehavior *springBehaviour, NSUInteger index, BOOL *stop) {
-        UICollectionViewLayoutAttributes *layoutAttributes = [springBehaviour.items firstObject];
-        return ![visibleItemsIndexPaths containsObject:layoutAttributes.indexPath];
+        id firstObject = springBehaviour.items.firstObject;
+        if (firstObject) {
+            UICollectionViewLayoutAttributes *layoutAttributes = firstObject;
+            return ![visibleItemsIndexPaths containsObject:layoutAttributes.indexPath];
+            
+        } else {
+            return YES;
+        }
     }];
     
     NSArray *behaviorsToRemove = [self.dynamicAnimator.behaviors objectsAtIndexes:indexSet];
     
     [behaviorsToRemove enumerateObjectsUsingBlock:^(UIAttachmentBehavior *springBehaviour, NSUInteger index, BOOL *stop) {
-        UICollectionViewLayoutAttributes *layoutAttributes = [springBehaviour.items firstObject];
+        id firstObject = springBehaviour.items.firstObject;
+        if (firstObject) {
+            UICollectionViewLayoutAttributes *layoutAttributes = firstObject;
+            [self.visibleIndexPaths removeObject:layoutAttributes.indexPath];
+        }
         [self.dynamicAnimator removeBehavior:springBehaviour];
-        [self.visibleIndexPaths removeObject:layoutAttributes.indexPath];
     }];
 }
 
 - (void)jsq_adjustSpringBehavior:(UIAttachmentBehavior *)springBehavior forTouchLocation:(CGPoint)touchLocation
 {
-    UICollectionViewLayoutAttributes *item = [springBehavior.items firstObject];
-    CGPoint center = item.center;
+    id firstObject = springBehavior.items.firstObject;
     
-    //  if touch is not (0,0) -- adjust item center "in flight"
-    if (!CGPointEqualToPoint(CGPointZero, touchLocation)) {
-        CGFloat distanceFromTouch = fabs(touchLocation.y - springBehavior.anchorPoint.y);
-        CGFloat scrollResistance = distanceFromTouch / self.springResistanceFactor;
+    if (firstObject) {
+        UICollectionViewLayoutAttributes *item = firstObject;
+        CGPoint center = item.center;
         
-        if (self.latestDelta < 0.0f) {
-            center.y += MAX(self.latestDelta, self.latestDelta * scrollResistance);
+        //  if touch is not (0,0) -- adjust item center "in flight"
+        if (!CGPointEqualToPoint(CGPointZero, touchLocation)) {
+            CGFloat distanceFromTouch = fabs(touchLocation.y - springBehavior.anchorPoint.y);
+            CGFloat scrollResistance = distanceFromTouch / self.springResistanceFactor;
+            
+            if (self.latestDelta < 0.0f) {
+                center.y += MAX(self.latestDelta, self.latestDelta * scrollResistance);
+            }
+            else {
+                center.y += MIN(self.latestDelta, self.latestDelta * scrollResistance);
+            }
+            item.center = center;
         }
-        else {
-            center.y += MIN(self.latestDelta, self.latestDelta * scrollResistance);
-        }
-        item.center = center;
     }
 }
 

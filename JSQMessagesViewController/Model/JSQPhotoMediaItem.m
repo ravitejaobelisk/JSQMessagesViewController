@@ -129,9 +129,15 @@
 
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-    JSQPhotoMediaItem *copy = [[[self class] allocWithZone:zone] initWithImage:self.image];
-    copy.appliesMediaViewMaskAsOutgoing = self.appliesMediaViewMaskAsOutgoing;
-    return copy;
+    UIImage* image = self.image;
+
+    if (image) {
+        JSQPhotoMediaItem *copy = [[[self class] allocWithZone:zone] initWithImage:image];
+        copy.appliesMediaViewMaskAsOutgoing = self.appliesMediaViewMaskAsOutgoing;
+        return copy;
+    } else {
+        return nil;
+    }
 }
 
 @end

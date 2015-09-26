@@ -58,7 +58,7 @@
         self.tophairLine = tophairLine;
     }
     
-    //Top Button Container hair line
+    //Middle hair line
     if (!self.middlehairLine) {
         CALayer* middlehairLine = [CALayer layer];
         middlehairLine.frame = CGRectMake(customAttributes.messageBubbleContainerViewWidth / 2, 0, 0.5, self.buttonViewContainer.bounds.size.height);

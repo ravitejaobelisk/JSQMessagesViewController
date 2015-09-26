@@ -134,6 +134,15 @@
                     accessoriesWidth = MAX(leftButtonRect.size.width,rightButtonRect.size.width) * 2;
                 }
                     
+                case HXExtendedDataMessageTypeAttributedTextHeaderImageSingleButton: {
+                    accessoriesHeight = 120 + 44;
+                    CGRect buttonRect = [[extendedMessageItem titleForButton] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                                           options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                                        attributes:@{ NSFontAttributeName : self.messageBubbleFont }
+                                                                                           context:nil];
+                    accessoriesWidth = buttonRect.size.width;
+                }
+                    
                 default: break;
             }
             
