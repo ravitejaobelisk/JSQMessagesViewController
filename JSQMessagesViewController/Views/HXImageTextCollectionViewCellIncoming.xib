@@ -46,7 +46,7 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="eou-Fk-Cfk" userLabel="Header Image Container View" customClass="UIRoundedCornersView">
                                 <rect key="frame" x="6" y="0.0" width="238" height="119"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nv4-qe-4f2" userLabel="Header View">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nv4-qe-4f2" userLabel="Header View">
                                         <rect key="frame" x="0.0" y="0.0" width="238" height="119"/>
                                         <animations/>
                                     </imageView>

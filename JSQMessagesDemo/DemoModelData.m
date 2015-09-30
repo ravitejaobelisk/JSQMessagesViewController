@@ -453,6 +453,17 @@
     [self.messages addObject:imageHeaderSingleButtonMessage2];
     
     
+    HXExtendedMessage* imageHeaderMessage40 = [[HXExtendedMessage alloc]initWithSenderId:kJSQDemoAvatarIdCook
+                                                                                  senderDisplayName:kJSQDemoAvatarDisplayNameCook
+                                                                                               date:[NSDate date]
+                                                                                               type:HXExtendedDataMessageTypeAttributedTextHeaderImage];
+    
+    imageHeaderMessage40.attributedText = attributedStringPneu;
+    imageHeaderMessage40.image = [UIImage imageNamed:@"oculos"];
+    [self.messages addObject:imageHeaderMessage40];
+    
+    
+    
     //[self addPhotoMediaMessage];
     
     /**
