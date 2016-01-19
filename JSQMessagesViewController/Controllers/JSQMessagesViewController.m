@@ -21,6 +21,8 @@
 #import "JSQMessagesCollectionViewFlowLayoutInvalidationContext.h"
 
 #import "JSQMessageData.h"
+#import "JSQMessageAttributedData.h"
+
 #import "JSQMessageBubbleImageDataSource.h"
 #import "JSQMessageAvatarImageDataSource.h"
 
@@ -481,6 +483,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     cell.delegate = collectionView;
 
     if (!isMediaMessage) {
+        /*
         cell.textView.text = [messageItem text];
 
         if ([UIDevice jsq_isCurrentDeviceBeforeiOS8]) {
@@ -489,7 +492,23 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
             cell.textView.attributedText = [[NSAttributedString alloc] initWithString:[messageItem text]
                                                                            attributes:@{ NSFontAttributeName : collectionView.collectionViewLayout.messageBubbleFont }];
         }
-
+        */
+        
+        if ([messageItem conformsToProtocol:@protocol(JSQMessageAttributedData)]) {
+            id <JSQMessageAttributedData> attributedMessageItem =  (id <JSQMessageAttributedData>) messageItem;
+            cell.textView.attributedText = [attributedMessageItem attributedText];
+            
+        } else {
+            cell.textView.text = [messageItem text];
+            
+            if ([UIDevice jsq_isCurrentDeviceBeforeiOS8]) {
+                //  workaround for iOS 7 textView data detectors bug
+                cell.textView.text = nil;
+                cell.textView.attributedText = [[NSAttributedString alloc] initWithString:[messageItem text]
+                                                                               attributes:@{ NSFontAttributeName : collectionView.collectionViewLayout.messageBubbleFont }];
+            }
+        }
+        
         NSParameterAssert(cell.textView.text != nil);
 
         id<JSQMessageBubbleImageDataSource> bubbleImageDataSource = [collectionView.dataSource collectionView:collectionView messageBubbleImageDataForItemAtIndexPath:indexPath];
