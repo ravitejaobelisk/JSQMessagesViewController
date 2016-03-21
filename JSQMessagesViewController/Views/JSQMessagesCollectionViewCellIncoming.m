@@ -17,16 +17,37 @@
 //
 
 #import "JSQMessagesCollectionViewCellIncoming.h"
+#import "NSObject+BackgroundLayer.h"
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @implementation JSQMessagesCollectionViewCellIncoming
 
 #pragma mark - Overrides
+
+CAGradientLayer *bgLayer;
+CAGradientLayer *bgLayerRight;
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     self.messageBubbleTopLabel.textAlignment = NSTextAlignmentLeft;
     self.cellBottomLabel.textAlignment = NSTextAlignmentLeft;
+    
+    bgLayer = [CAGradientLayer greyGradientForLeftView];
+    bgLayerRight  = [CAGradientLayer greyGradientForRightView];
+    
+    [self.leftGradientView.layer insertSublayer:bgLayer atIndex:0];
+    [self.rightGradientView.layer insertSublayer:bgLayerRight atIndex:0];
+    
+}
+
+- (void)layoutSublayersOfLayer:(CALayer *)layer {
+    [super layoutSublayersOfLayer:layer];
+    [self layoutIfNeeded];
+    
+    bgLayer.frame = self.leftGradientView.bounds;
+    bgLayerRight.frame = self.rightGradientView.bounds;
 }
 
 @end

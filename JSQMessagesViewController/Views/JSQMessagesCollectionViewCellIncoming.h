@@ -24,4 +24,9 @@
  */
 @interface JSQMessagesCollectionViewCellIncoming : JSQMessagesCollectionViewCell
 
+@property (strong, nonatomic) IBOutlet UIView *rightGradientView;
+@property (strong, nonatomic) IBOutlet UIView *leftGradientView;
+
+
+
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,14 +19,14 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lof-sk-WO3">
                                 <rect key="frame" x="20" y="10" width="88" height="1"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.70196078429999997" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="z4W-Y6-Vx4"/>
+                                    <constraint firstAttribute="height" constant="1" id="m9a-ex-heK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G6-Rp-zkJ">
                                 <rect key="frame" x="213" y="10" width="87" height="1"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.70196078429999997" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="bJp-Hg-bRI"/>
                                 </constraints>
@@ -148,11 +148,13 @@
                 <outlet property="cellBottomLabelHeightConstraint" destination="r6P-xz-iBI" id="Y9k-SQ-pRk"/>
                 <outlet property="cellTopLabel" destination="12e-xx-jZ7" id="vDG-ne-JbR"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="8bc-9I-dp5" id="Saz-Q3-Vas"/>
+                <outlet property="leftGradientView" destination="lof-sk-WO3" id="aP6-2V-Jnc"/>
                 <outlet property="messageBubbleContainerView" destination="5kx-I6-C9X" id="PQS-qh-W5y"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="Tf5-DA-uDS" id="0pg-lb-EwZ"/>
                 <outlet property="messageBubbleImageView" destination="r21-Q5-ZO7" id="ytR-BZ-Rie"/>
                 <outlet property="messageBubbleTopLabel" destination="cPa-04-pNh" id="C2O-Gx-FXI"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="zSK-7h-eFc" id="UUI-du-3vr"/>
+                <outlet property="rightGradientView" destination="6G6-Rp-zkJ" id="mJs-Q8-ZRK"/>
                 <outlet property="textView" destination="OCI-G9-RjO" id="Ngk-UP-axe"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="VXM-lD-B7y" id="Veg-pi-5c2"/>
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="Pym-Wr-Kzd" id="xA0-ss-dEM"/>
