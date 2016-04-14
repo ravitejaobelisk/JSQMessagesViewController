@@ -95,7 +95,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     _incomingAvatarViewSize = defaultAvatarSize;
     _outgoingAvatarViewSize = defaultAvatarSize;
     
-    _springinessEnabled = NO;
+    _springinessEnabled = YES; //changed by kokila
     _springResistanceFactor = 1000;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
