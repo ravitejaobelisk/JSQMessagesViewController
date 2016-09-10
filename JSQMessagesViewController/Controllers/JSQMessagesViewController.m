@@ -34,7 +34,7 @@
 
 #import "NSString+JSQMessages.h"
 #import "NSBundle+JSQMessages.h"
-
+#import "UIDevice+JSQMessages.h"
 #import <objc/runtime.h>
 
 
